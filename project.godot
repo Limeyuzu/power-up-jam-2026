@@ -27,6 +27,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Convo dodger"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/YarnSpinner-Godot/plugin.cfg")
+
 [input]
 
 ui_left={

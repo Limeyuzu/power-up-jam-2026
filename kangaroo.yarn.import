@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://rngxfx4us1vv"
+path="res://.godot/imported/kangaroo.yarn-dc538d66772a6ab8de24596f87e2ebcd.tres"
+
+[deps]
+
+source_file="res://kangaroo.yarn"
+dest_files=["res://.godot/imported/kangaroo.yarn-dc538d66772a6ab8de24596f87e2ebcd.tres"]
+
+[params]
+

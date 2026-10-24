@@ -8,7 +8,7 @@
 [node name="Player" type="Node2D" unique_id=598014935]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1955731831]
-collision_mask = 9
+collision_layer = 3
 motion_mode = 1
 script = ExtResource("1_g2els")
 
@@ -16,9 +16,9 @@ script = ExtResource("1_g2els")
 texture = ExtResource("1_3vyb7")
 region_rect = Rect2(48, 1, 48, 80)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=459418568]
+[node name="BodyCollider" type="CollisionShape2D" parent="CharacterBody2D" unique_id=459418568]
 position = Vector2(0, 1)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(1.8, 1.93)
 shape = SubResource("CircleShape2D_8kldo")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1207614874]
