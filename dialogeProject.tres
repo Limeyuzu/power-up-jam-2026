@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="YarnProjectResource" format=3 uid="uid://c1lho1ykq661d"]
+
+[ext_resource type="Script" uid="uid://bqlth3p0f834x" path="res://addons/yarn_spinner/yarn_project_resource.gd" id="1_m3wjd"]
+
+[resource]
+script = ExtResource("1_m3wjd")
+compiled_program = PackedByteArray()
+source_files = PackedStringArray()
+metadata/_custom_type_script = "uid://bqlth3p0f834x"

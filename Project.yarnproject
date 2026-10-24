@@ -1,0 +1,20 @@
+{
+    "projectFileVersion": 4,
+    "sourceFiles": [
+        "**/*.yarn"
+    ],
+    "excludeFiles": [],
+    "baseLanguage": "en",
+    "projectName": "MyYarnProject",
+    "authorName": [
+        "LeslieLlama"
+    ],
+    "editorOptions": {
+        "yarnScriptEditor": {
+            "presenter": "try"
+        }
+    },
+    "definitions": [
+        "Project.ysls.json"
+    ]
+}

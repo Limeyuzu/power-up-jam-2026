@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="Convo-dodger"
-run/main_scene="uid://6p74unl7yab6"
+run/main_scene="uid://d0iu7jtbmhpn3"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 run/name="Convo dodger"
+
+[autoload]
+
+YarnSpinner="*uid://bhiw7fae5n1e8"
 
 [display]
 
@@ -29,7 +33,7 @@ project/assembly_name="Convo dodger"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/YarnSpinner-Godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/yarn_spinner/plugin.cfg")
 
 [input]
 
