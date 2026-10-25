@@ -1,21 +1,9 @@
-title: Start
-tags:
+title: Bottom
 ---
-Narrator: Oh, hello!
--> Hi, where am I?
-    Narrator: You're in Godot!
-    -> Oh.
-        <<jump Oh>>
-    -> How did I get here?
-        <<jump Godot>>
+Someone read the Beginner's Guide! [color="red"] AHHHHHHHHHHHHHH [/color] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
 ===
 
-title: Oh
+title: Top
 ---
-Narrator: Yeah, fun, right?
-===
-
-title: Godot
----
-Narrator: Someone read the Beginner's Guide!
+I wanna see 5 pushups NOW!
 ===
