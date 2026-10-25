@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
+@export var is_mouse_move = false
+
 var speed = 400  # speed in pixels/sec
 var is_dead = false
 
 var spawn_coordinates = Vector2(0,0)
+
+
+	
+
 
 func _ready() -> void:
 	Signals.Level_Complete.connect(_win)
@@ -16,7 +22,7 @@ func _set_spawn(pos : Vector2):
 	spawn_coordinates = pos
 	global_position = spawn_coordinates
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_dead == true:
 		return
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

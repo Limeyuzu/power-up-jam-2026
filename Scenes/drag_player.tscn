@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bycra5buikrl0"]
+
+[ext_resource type="Script" uid="uid://djrche84hmb42" path="res://Scripts/drag_player.gd" id="1_7w0ys"]
+[ext_resource type="Texture2D" uid="uid://b4wcbyagsiu8y" path="res://icon.svg" id="2_kwicr"]
+
+[node name="DragPlayer" type="Node2D" unique_id=1129877891]
+script = ExtResource("1_7w0ys")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1940715353]
+scale = Vector2(0.6484375, 0.6484375)
+texture = ExtResource("2_kwicr")
+
+[node name="ClickBox" type="Button" parent="." unique_id=1158390662]
+offset_left = -41.0
+offset_top = -41.0
+offset_right = 41.0
+offset_bottom = 42.0
+
+[connection signal="button_down" from="ClickBox" to="." method="_on_click_box_button_down"]
+[connection signal="button_up" from="ClickBox" to="." method="_on_click_box_button_up"]
