@@ -13,5 +13,5 @@ func _ready() -> void:
 	collisionShape.shape.set_size(Vector2(rect.size.x - 2 * margins, rect.size.y - 2 * margins))
 	collisionShape.set_position(Vector2(rect.size.x / 2, rect.size.y / 2))
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	Signals.emit_signal("Player_Death")
