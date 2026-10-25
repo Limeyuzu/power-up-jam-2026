@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var is_mouse_move = false
 
 var speed = 400  # speed in pixels/sec
+var drag_speed = 800
 var is_dead = false
 var spawn_coordinates = Vector2(0,0)
 
@@ -26,21 +27,30 @@ func _set_spawn(pos : Vector2):
 	global_position = spawn_coordinates
 
 func _physics_process(_delta):
+	var direction 
+	move_and_slide()
 	#stop movement when the player is dead
 	if is_dead == true:
 		return
 	
 	#if mouse movement is set to true, move the character with the mouse by clicking and dragging them
 	if dragging && is_mouse_move:
-		position = get_global_mouse_position() - offset
+		var target = get_global_mouse_position() - offset
+		direction = target - position
+		if position.distance_to(target) > 6:
+			velocity = direction.normalized() * drag_speed
+		else: 
+			velocity = Vector2(0,0)
+	else:
+		velocity = Vector2(0,0)
 		
 	#if mouse movement is set to false, the keyboard input code is used below
 	if is_mouse_move == true:
 		return
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = direction * speed
 
-	move_and_slide()
+	
 	
 func _win():
 	is_dead = true
@@ -48,6 +58,7 @@ func _win():
 func _die():
 	is_dead = true
 	dragging = false
+	velocity = Vector2(0,0)
 	var tween = get_tree().create_tween().set_parallel(true)
 	tween.tween_property($Sprite2D, "modulate", Color.RED, 1.0).set_trans(Tween.TRANS_SINE)
 	tween.tween_property($Sprite2D, "scale", Vector2(), 1.0).set_trans(Tween.TRANS_BOUNCE)

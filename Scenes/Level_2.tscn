@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="8_25io1"]
 [ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="9_8gp1p"]
 [ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_yybfe"]
+[ext_resource type="Texture2D" uid="uid://cy42bsvmlggtd" path="res://sprites/player.png" id="11_5ufib"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crf2g"]
 bg_color = Color(0.9098039, 0.40784314, 0.5568628, 1)
@@ -41,6 +42,9 @@ bg_color = Color(0.14041275, 0.6911776, 0.61381274, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtpg"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
+size = Vector2(1717, 85)
 
 [node name="Level2" type="Node2D" unique_id=1384450169]
 script = ExtResource("1_001cu")
@@ -133,7 +137,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Spawn" type="Area2D" parent="." unique_id=178399655]
-position = Vector2(86, 1008)
+position = Vector2(224, 892)
 script = ExtResource("4_5ufib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn" unique_id=1664351189]
@@ -148,7 +152,7 @@ offset_bottom = 71.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("5_001cu")]
-position = Vector2(97, 1028)
+position = Vector2(235, 912)
 
 [node name="YarnDialogueRunner" type="Node" parent="." unique_id=978152143 node_paths=PackedStringArray("presenters")]
 script = ExtResource("6_57dsp")
@@ -221,6 +225,31 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0jtpg")
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1290000039]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=286356054]
+position = Vector2(858.5, 39.5)
+shape = SubResource("RectangleShape2D_qnpof")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1893576437]
+modulate = Color(0.13682577, 0.13682574, 0.13682571, 1)
+position = Vector2(859.5, 41.499996)
+scale = Vector2(26.890627, 1.1571428)
+texture = ExtResource("11_5ufib")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=2064159483]
+position = Vector2(0, 996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=729567127]
+position = Vector2(858.5, 39.5)
+shape = SubResource("RectangleShape2D_qnpof")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=1942616244]
+modulate = Color(0.13682577, 0.13682574, 0.13682571, 1)
+position = Vector2(859.5, 41.499996)
+scale = Vector2(26.890627, 1.1571428)
+texture = ExtResource("11_5ufib")
 
 [connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
 [connection signal="body_entered" from="Hurtbox2" to="Hurtbox2" method="_on_body_entered"]
