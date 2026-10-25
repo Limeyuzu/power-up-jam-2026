@@ -57,8 +57,6 @@ signal command_received(command_name: String, command_args: Array)
 
 @export_group("Dialogue Setup")
 
-@export var dialogue_bubble: DialogueBubble
-
 @export var yarn_project: YarnProjectResource:
 	set(value):
 		if _is_running:
@@ -67,6 +65,8 @@ signal command_received(command_name: String, command_args: Array)
 		yarn_project = value
 		if yarn_project != null and _vm != null:
 			_load_program()
+
+@export var start_node: String = "Start"
 
 @export var auto_start: bool = false
 
@@ -610,7 +610,7 @@ func start_dialogue(node_name: String = "") -> void:
 		return
 
 	if node_name.is_empty():
-		node_name = dialogue_bubble.startNode
+		node_name = start_node
 
 	if yarn_project == null:
 		push_error("dialogue runner: can't start dialogue: no yarn project has been configured")

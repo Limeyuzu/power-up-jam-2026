@@ -19,6 +19,7 @@ run/name="Convo dodger"
 [autoload]
 
 YarnSpinner="*uid://bhiw7fae5n1e8"
+ACVoicebox="*uid://b73odmyph68kf"
 
 [display]
 
