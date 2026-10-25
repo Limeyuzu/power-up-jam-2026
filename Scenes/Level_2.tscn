@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="9_8gp1p"]
 [ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_yybfe"]
 [ext_resource type="Texture2D" uid="uid://cy42bsvmlggtd" path="res://sprites/player.png" id="11_5ufib"]
+[ext_resource type="PackedScene" uid="uid://cbh6wkodlsbwa" path="res://Scenes/key.tscn" id="12_v1bqs"]
+[ext_resource type="PackedScene" uid="uid://dsh8expeklfeo" path="res://Scenes/door.tscn" id="13_7qdet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crf2g"]
 bg_color = Color(0.9098039, 0.40784314, 0.5568628, 1)
@@ -250,6 +252,16 @@ modulate = Color(0.13682577, 0.13682574, 0.13682571, 1)
 position = Vector2(859.5, 41.499996)
 scale = Vector2(26.890627, 1.1571428)
 texture = ExtResource("11_5ufib")
+
+[node name="Key" parent="." unique_id=255064478 instance=ExtResource("12_v1bqs")]
+position = Vector2(1105, 398)
+
+[node name="Key2" parent="." unique_id=1034164627 instance=ExtResource("12_v1bqs")]
+position = Vector2(1477, 705)
+
+[node name="Door" parent="." unique_id=125407365 node_paths=PackedStringArray("assigned_keys") instance=ExtResource("13_7qdet")]
+position = Vector2(1819, 184)
+assigned_keys = [NodePath("../Key"), NodePath("../Key2")]
 
 [connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
 [connection signal="body_entered" from="Hurtbox2" to="Hurtbox2" method="_on_body_entered"]

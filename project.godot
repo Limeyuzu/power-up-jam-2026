@@ -22,6 +22,10 @@ YarnSpinner="*uid://bhiw7fae5n1e8"
 Signals="*uid://bpmmp11kafro0"
 ACVoicebox="*uid://b73odmyph68kf"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=1920
