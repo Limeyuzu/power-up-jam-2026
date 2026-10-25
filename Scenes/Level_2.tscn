@@ -4,9 +4,7 @@
 [ext_resource type="Script" uid="uid://cwuy1odofr5kx" path="res://Scripts/textbox_hazard.gd" id="2_5ufib"]
 [ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="3_diio2"]
 [ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="4_5ufib"]
-[ext_resource type="Script" uid="uid://br0775jgdwxg3" path="res://Scripts/player_movement.gd" id="4_v1bqs"]
-[ext_resource type="Texture2D" uid="uid://b4wcbyagsiu8y" path="res://icon.svg" id="5_7qdet"]
-[ext_resource type="PackedScene" uid="uid://bycra5buikrl0" path="res://Scenes/drag_player.tscn" id="5_diio2"]
+[ext_resource type="PackedScene" uid="uid://cx30hg3u3nvc3" path="res://Scenes/player.tscn" id="5_001cu"]
 [ext_resource type="Script" uid="uid://flra500ihbix" path="res://addons/yarn_spinner/dialogue_runner.gd" id="6_57dsp"]
 [ext_resource type="Resource" uid="uid://dup74utxyd06b" path="res://Project.yarnproject" id="7_tm7ih"]
 [ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="8_25io1"]
@@ -40,9 +38,6 @@ size = Vector2(197, 81)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtgv7"]
 bg_color = Color(0.14041275, 0.6911776, 0.61381274, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0s43"]
-size = Vector2(84, 87)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtpg"]
 bg_color = Color(0, 0, 0, 1)
@@ -152,22 +147,8 @@ offset_right = 113.0
 offset_bottom = 71.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
-[node name="DragPlayer" parent="." unique_id=1129877891 instance=ExtResource("5_diio2")]
-position = Vector2(288, 1032)
-
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1174155624]
+[node name="Player" parent="." unique_id=188212945 instance=ExtResource("5_001cu")]
 position = Vector2(97, 1028)
-input_pickable = true
-script = ExtResource("4_v1bqs")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=466219140]
-position = Vector2(0.49998474, 0)
-scale = Vector2(0.6640623, 0.6718748)
-texture = ExtResource("5_7qdet")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=798400588]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_m0s43")
 
 [node name="YarnDialogueRunner" type="Node" parent="." unique_id=978152143 node_paths=PackedStringArray("presenters")]
 script = ExtResource("6_57dsp")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cx30hg3u3nvc3"]
+
+[ext_resource type="Script" uid="uid://br0775jgdwxg3" path="res://Scripts/player_movement.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://b4wcbyagsiu8y" path="res://icon.svg" id="2_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0s43"]
+size = Vector2(84, 87)
+
+[node name="Player" type="CharacterBody2D" unique_id=188212945]
+input_pickable = true
+script = ExtResource("1_cvnsp")
+is_mouse_move = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=539903033]
+position = Vector2(0.49998474, 0)
+scale = Vector2(0.6640623, 0.6718748)
+texture = ExtResource("2_6t5aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284862590]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_m0s43")
+
+[node name="Button" type="Button" parent="." unique_id=874143699]
+offset_left = -41.0
+offset_top = -43.0
+offset_right = 43.0
+offset_bottom = 44.0
+
+[node name="HintLabel" type="Label" parent="." unique_id=676835355]
+offset_left = -51.0
+offset_top = -72.0
+offset_right = 51.0
+offset_bottom = -49.0
+text = "click to move"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
