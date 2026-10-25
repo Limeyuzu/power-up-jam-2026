@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 var speed = 400  # speed in pixels/sec
 var is_dead = false
+
+func _ready() -> void:
+	Signals.Level_Complete.connect(win)
+	Signals.Player_Death.connect(die)
+
 func _physics_process(delta):
 	if is_dead == true:
 		return

@@ -8,4 +8,4 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.die()
+	Signals.emit_signal("Player_Death")

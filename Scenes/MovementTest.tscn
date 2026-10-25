@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d0iu7jtbmhpn3"]
 
+[ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_lj3dt"]
 [ext_resource type="Script" uid="uid://br0775jgdwxg3" path="res://Scripts/player_movement.gd" id="1_m0s43"]
 [ext_resource type="Texture2D" uid="uid://b4wcbyagsiu8y" path="res://icon.svg" id="1_uskgd"]
 [ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="2_crf2g"]
@@ -8,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dup74utxyd06b" path="res://Project.yarnproject" id="6_vtgv7"]
 [ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="7_cbptv"]
 [ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="8_fsk2n"]
+[ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_0jtpg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crf2g"]
 size = Vector2(140, 123.5)
@@ -35,7 +37,8 @@ bg_color = Color(0.14041275, 0.6911776, 0.61381274, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0s43"]
 size = Vector2(84, 87)
 
-[node name="Node2D" type="Node2D" unique_id=1384450169]
+[node name="Level1" type="Node2D" unique_id=1384450169]
+script = ExtResource("1_lj3dt")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1862267599 groups=["hurtbox"]]
 position = Vector2(1, 151)
@@ -82,7 +85,7 @@ theme_override_font_sizes/font_size = 57
 text = "ofudsifhdjskljfhsdfdsa"
 
 [node name="Exit" type="Area2D" parent="." unique_id=65981014]
-position = Vector2(1037, 11)
+position = Vector2(1804, 11)
 script = ExtResource("2_crf2g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1599469015]
@@ -109,7 +112,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Spawn" type="Area2D" parent="." unique_id=178399655]
-position = Vector2(84, 577)
+position = Vector2(86, 1008)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn" unique_id=1664351189]
 position = Vector2(14.5, 30.5)
@@ -135,16 +138,6 @@ texture = ExtResource("1_uskgd")
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_m0s43")
 
-[node name="WinText" type="Label" parent="." unique_id=660866934]
-visible = false
-offset_left = 345.0
-offset_top = 245.0
-offset_right = 832.0
-offset_bottom = 351.0
-theme_override_colors/font_color = Color(0.95629674, 0.6172894, 0.22802043, 1)
-theme_override_font_sizes/font_size = 77
-text = "You escaped!"
-
 [node name="YarnDialogueRunner" type="Node" parent="." unique_id=978152143 node_paths=PackedStringArray("presenters")]
 script = ExtResource("5_vtgv7")
 yarn_project = ExtResource("6_vtgv7")
@@ -168,6 +161,43 @@ offset_bottom = 517.0
 script = ExtResource("8_fsk2n")
 metadata/_custom_type_script = "uid://cogqy630mjgv7"
 
+[node name="NonDiageticUI" type="CanvasLayer" parent="." unique_id=1761488485]
+
+[node name="Control" type="Control" parent="NonDiageticUI" unique_id=416934755]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("10_0jtpg")
+
+[node name="WinText" type="Label" parent="NonDiageticUI/Control" unique_id=660866934]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.5
+offset_top = -53.0
+offset_right = 243.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95629674, 0.6172894, 0.22802043, 1)
+theme_override_font_sizes/font_size = 77
+text = "You escaped!"
+
+[node name="NextLevelButton" type="Button" parent="NonDiageticUI/Control" unique_id=2104027857]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 925.0
+offset_right = 1201.0
+offset_bottom = 1036.0
+theme_override_font_sizes/font_size = 61
+text = "Next Room"
+
 [connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
 [connection signal="body_entered" from="Hurtbox2" to="Hurtbox2" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
+[connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]
