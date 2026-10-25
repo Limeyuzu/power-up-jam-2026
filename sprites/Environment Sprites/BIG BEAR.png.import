@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8eat8s4royn1"
-path="res://.godot/imported/Watercooler Draft.png-aa4f9d966981c8730fa4fdcd905864b7.ctex"
+uid="uid://cp6tb0ew30phx"
+path="res://.godot/imported/BIG BEAR.png-c59a8105f108a41d3641fde0f482ab76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Environment Sprites/Watercooler Draft.png"
-dest_files=["res://.godot/imported/Watercooler Draft.png-aa4f9d966981c8730fa4fdcd905864b7.ctex"]
+source_file="res://sprites/Environment Sprites/BIG BEAR.png"
+dest_files=["res://.godot/imported/BIG BEAR.png-c59a8105f108a41d3641fde0f482ab76.ctex"]
 
 [params]
 
