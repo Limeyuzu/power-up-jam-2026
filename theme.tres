@@ -1,4 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://tw7yenv8p7nj"]
 
+[ext_resource type="FontFile" uid="uid://cstr8mp1pm1bs" path="res://fonts/Barriecito-Regular.ttf" id="1_e1x85"]
+
 [resource]
+default_font = ExtResource("1_e1x85")
 default_font_size = 40

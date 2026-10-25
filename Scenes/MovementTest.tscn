@@ -26,9 +26,11 @@ script = ExtResource("1_lj3dt")
 target_level = ExtResource("2_irc8b")
 
 [node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("3_2ts83")]
+startNode = "Top"
 
 [node name="DialogueBubble2" parent="." unique_id=1753328311 instance=ExtResource("3_2ts83")]
 position = Vector2(907, 555)
+startNode = "Bottom"
 
 [node name="Exit" type="Area2D" parent="." unique_id=65981014]
 position = Vector2(1804, 11)
