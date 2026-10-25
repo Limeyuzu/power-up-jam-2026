@@ -14,4 +14,4 @@ func _ready() -> void:
 	collisionShape.set_position(Vector2(rect.size.x / 2, rect.size.y / 2))
 
 func _on_body_entered(body: Node2D) -> void:
-	body.die()
+	Signals.emit_signal("Player_Death")

@@ -20,12 +20,13 @@ run/name="Convo dodger"
 
 YarnSpinner="*uid://bhiw7fae5n1e8"
 ACVoicebox="*uid://b73odmyph68kf"
+Signals="*uid://bpmmp11kafro0"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [dotnet]
