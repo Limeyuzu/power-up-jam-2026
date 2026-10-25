@@ -1,24 +1,9 @@
 [gd_scene format=3 uid="uid://d0iu7jtbmhpn3"]
 
-[ext_resource type="Theme" uid="uid://tw7yenv8p7nj" path="res://theme.tres" id="1_fsk2n"]
+[ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="1_lj3dt"]
 [ext_resource type="Script" uid="uid://br0775jgdwxg3" path="res://Scripts/player_movement.gd" id="1_m0s43"]
 [ext_resource type="Texture2D" uid="uid://b4wcbyagsiu8y" path="res://icon.svg" id="1_uskgd"]
 [ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="2_crf2g"]
-[ext_resource type="Script" uid="uid://cwuy1odofr5kx" path="res://Scripts/textbox_hazard.gd" id="2_m0s43"]
-[ext_resource type="Script" uid="uid://flra500ihbix" path="res://addons/yarn_spinner/dialogue_runner.gd" id="5_vtgv7"]
-[ext_resource type="Resource" uid="uid://dup74utxyd06b" path="res://Project.yarnproject" id="6_vtgv7"]
-[ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="7_cbptv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ji530"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evltv"]
-bg_color = Color(0.6313726, 0.60784316, 0.44313726, 0.52156866)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crf2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evltv"]
 size = Vector2(197, 81)
@@ -31,91 +16,16 @@ size = Vector2(84, 87)
 
 [node name="Node2D" type="Node2D" unique_id=1384450169]
 
-[node name="TopBubble" type="Node2D" parent="." unique_id=981070173]
-position = Vector2(87, 109)
+[node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("1_lj3dt")]
+position = Vector2(48, 57)
+startNode = "Top"
 
-[node name="Hurtbox" type="Area2D" parent="TopBubble" unique_id=1663344966 node_paths=PackedStringArray("panel", "textLabel") groups=["hurtbox"]]
-script = ExtResource("2_m0s43")
-panel = NodePath("../TopPanel")
-textLabel = NodePath("../TopPanel/TopTextLabel")
+[node name="DialogueBubble2" parent="." unique_id=1449573999 instance=ExtResource("1_lj3dt")]
+position = Vector2(364, 355)
+startNode = "Bottom"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBubble/Hurtbox" unique_id=1737410689]
-shape = SubResource("RectangleShape2D_ji530")
-debug_color = Color(0.7882353, 0.34901962, 0.65882355, 0.41960785)
-
-[node name="TopPanel" type="PanelContainer" parent="TopBubble" unique_id=1322843206]
-clip_contents = true
-offset_right = 465.0
-offset_bottom = 110.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_evltv")
-
-[node name="TopTextLabel" type="RichTextLabel" parent="TopBubble/TopPanel" unique_id=5473031]
-custom_maximum_size = Vector2(800, 800)
-layout_mode = 2
-offset_transform_position = Vector2(20, 0)
-theme = ExtResource("1_fsk2n")
-bbcode_enabled = true
-text = "I NEED protien standard"
-fit_content = true
-scroll_active = false
-autowrap_mode = 2
-
-[node name="YarnDialogueRunner" type="Node" parent="TopBubble/TopPanel" unique_id=1809247397 node_paths=PackedStringArray("presenters")]
-script = ExtResource("5_vtgv7")
-yarn_project = ExtResource("6_vtgv7")
-start_node = "Top"
-auto_start = true
-presenters = [NodePath("../YarnLinePresenter")]
-metadata/_custom_type_script = "uid://flra500ihbix"
-
-[node name="YarnLinePresenter" type="Node" parent="TopBubble/TopPanel" unique_id=2039620068 node_paths=PackedStringArray("text_label")]
-script = ExtResource("7_cbptv")
-text_label = NodePath("../TopTextLabel")
-click_anywhere_to_continue = false
-metadata/_custom_type_script = "uid://cged8u182768u"
-
-[node name="BottomBubble" type="Node2D" parent="." unique_id=1624327252]
-position = Vector2(321, 441)
-
-[node name="Hurtbox2" type="Area2D" parent="BottomBubble" unique_id=1123306631 node_paths=PackedStringArray("panel", "textLabel") groups=["hurtbox"]]
-script = ExtResource("2_m0s43")
-panel = NodePath("../BottomPanel")
-textLabel = NodePath("../BottomPanel/BottomTextLabel")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBubble/Hurtbox2" unique_id=362570535]
-shape = SubResource("RectangleShape2D_crf2g")
-debug_color = Color(0.78837734, 0.3481881, 0.6569848, 0.41960785)
-
-[node name="BottomPanel" type="PanelContainer" parent="BottomBubble" unique_id=292050422]
-clip_contents = true
-offset_right = 400.0
-offset_bottom = 100.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_evltv")
-
-[node name="BottomTextLabel" type="RichTextLabel" parent="BottomBubble/BottomPanel" unique_id=1730256542]
-custom_maximum_size = Vector2(800, 800)
-layout_mode = 2
-offset_transform_position = Vector2(20, 0)
-theme = ExtResource("1_fsk2n")
-bbcode_enabled = true
-text = "placeholder"
-fit_content = true
-scroll_active = false
-autowrap_mode = 2
-
-[node name="YarnDialogueRunner" type="Node" parent="BottomBubble/BottomPanel" unique_id=978152143 node_paths=PackedStringArray("presenters")]
-script = ExtResource("5_vtgv7")
-yarn_project = ExtResource("6_vtgv7")
-start_node = "Bottom"
-auto_start = true
-presenters = [NodePath("../YarnLinePresenter")]
-metadata/_custom_type_script = "uid://flra500ihbix"
-
-[node name="YarnLinePresenter" type="Node" parent="BottomBubble/BottomPanel" unique_id=1763649733 node_paths=PackedStringArray("text_label")]
-script = ExtResource("7_cbptv")
-text_label = NodePath("../BottomTextLabel")
-click_anywhere_to_continue = false
-metadata/_custom_type_script = "uid://cged8u182768u"
+[node name="DialogueBubble3" parent="." unique_id=498749518 instance=ExtResource("1_lj3dt")]
+position = Vector2(248, 738)
 
 [node name="Exit" type="Area2D" parent="." unique_id=65981014]
 position = Vector2(1037, 11)
@@ -181,6 +91,4 @@ theme_override_colors/font_color = Color(0.95629674, 0.6172894, 0.22802043, 1)
 theme_override_font_sizes/font_size = 77
 text = "You escaped!"
 
-[connection signal="body_entered" from="TopBubble/Hurtbox" to="TopBubble/Hurtbox" method="_on_body_entered"]
-[connection signal="body_entered" from="BottomBubble/Hurtbox2" to="BottomBubble/Hurtbox2" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
