@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rdq7lv2sxt41"
-path="res://.godot/imported/Anime Poster 2.png-cbcddb2f4618f2f5e991664bcc3c7a6a.ctex"
+uid="uid://d0ilbd1j8wd2v"
+path="res://.godot/imported/Anime Poster 3.png-42f26d8bdebf353e6b930536fad9ae20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Environment Sprites/Anime Poster 2.png"
-dest_files=["res://.godot/imported/Anime Poster 2.png-cbcddb2f4618f2f5e991664bcc3c7a6a.ctex"]
+source_file="res://sprites/Environment Sprites/Posters/Anime Poster 3.png"
+dest_files=["res://.godot/imported/Anime Poster 3.png-42f26d8bdebf353e6b930536fad9ae20.ctex"]
 
 [params]
 
