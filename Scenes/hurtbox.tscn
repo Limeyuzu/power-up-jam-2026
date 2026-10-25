@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c81qtj2euet2g"]
+
+[ext_resource type="Script" uid="uid://cwuy1odofr5kx" path="res://Scripts/textbox_hazard.gd" id="1_rnnan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crf2g"]
+resource_local_to_scene = true
+size = Vector2(140, 123.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crf2g"]
+bg_color = Color(0.9098039, 0.40784314, 0.5568628, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="Hurtbox" type="Area2D" unique_id=522800735 groups=["hurtbox"]]
+script = ExtResource("1_rnnan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143831947]
+position = Vector2(69, 64.25)
+shape = SubResource("RectangleShape2D_crf2g")
+debug_color = Color(0.78837734, 0.3481881, 0.6569848, 0.41960785)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=983103238]
+clip_contents = true
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 461.0
+offset_bottom = 127.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_crf2g")
+
+[node name="Label" type="Label" parent="Panel" unique_id=2022324299]
+layout_mode = 2
+theme_override_font_sizes/font_size = 57
+text = "I NEED protien standard godot shape"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
