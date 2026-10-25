@@ -4,61 +4,43 @@
 [ext_resource type="Script" uid="uid://cwuy1odofr5kx" path="res://Scripts/textbox_hazard.gd" id="1_le7rw"]
 [ext_resource type="Theme" uid="uid://tw7yenv8p7nj" path="res://theme.tres" id="2_cto1i"]
 [ext_resource type="Script" uid="uid://flra500ihbix" path="res://addons/yarn_spinner/dialogue_runner.gd" id="3_3h1l8"]
-[ext_resource type="Texture2D" uid="uid://cb173m8y1w5xu" path="res://sprites/ui-bubble.png" id="3_esc4m"]
 [ext_resource type="Resource" uid="uid://dup74utxyd06b" path="res://Project.yarnproject" id="4_esc4m"]
 [ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="5_pfy0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cto1i"]
 resource_local_to_scene = true
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwrjw"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evltv"]
+bg_color = Color(0.6313726, 0.60784316, 0.44313726, 0.52156866)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkw2w"]
-content_margin_left = 30.0
-content_margin_top = 30.0
-content_margin_right = 30.0
-content_margin_bottom = 60.0
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[node name="DialogueBubble" type="Node2D" unique_id=742978764]
+[node name="DialogueBubble" type="Node2D" unique_id=742978764 node_paths=PackedStringArray("dialogueRunner")]
 script = ExtResource("1_cto1i")
+dialogueRunner = NodePath("TopPanel/YarnDialogueRunner")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1992005786 node_paths=PackedStringArray("panel", "textLabel", "collisionShape") groups=["hurtbox"]]
 script = ExtResource("1_le7rw")
 panel = NodePath("../TopPanel")
-textLabel = NodePath("../TopPanel/PanelContainer/TopTextLabel")
+textLabel = NodePath("../TopPanel/TopTextLabel")
 collisionShape = NodePath("CollisionShape2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=18366836]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=2092298908]
 shape = SubResource("RectangleShape2D_cto1i")
 debug_color = Color(0.6767672, 0.42960477, 0.7029842, 0.41960785)
 
 [node name="TopPanel" type="PanelContainer" parent="." unique_id=1756780005]
 clip_contents = true
 offset_right = 622.0
-offset_bottom = 250.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jwrjw")
+offset_bottom = 110.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_evltv")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="TopPanel" unique_id=1138388353]
-layout_mode = 2
-texture = ExtResource("3_esc4m")
-region_rect = Rect2(0, 0, 580, 300)
-patch_margin_left = 20
-patch_margin_top = 50
-patch_margin_right = 20
-patch_margin_bottom = 200
-
-[node name="PanelContainer" type="PanelContainer" parent="TopPanel" unique_id=2033485798]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pkw2w")
-
-[node name="TopTextLabel" type="RichTextLabel" parent="TopPanel/PanelContainer" unique_id=157340846]
+[node name="TopTextLabel" type="RichTextLabel" parent="TopPanel" unique_id=157340846]
 custom_maximum_size = Vector2(800, 800)
 layout_mode = 2
-offset_transform_enabled = true
 offset_transform_position = Vector2(20, 0)
-offset_transform_scale = Vector2(0.9, 0.9)
 theme = ExtResource("2_cto1i")
 bbcode_enabled = true
 text = "placeholder the text will go here"
@@ -66,18 +48,17 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="YarnDialogueRunner" type="Node" parent="TopPanel" unique_id=111050668 node_paths=PackedStringArray("dialogue_bubble", "presenters")]
+[node name="YarnDialogueRunner" type="Node" parent="TopPanel" unique_id=111050668 node_paths=PackedStringArray("presenters")]
 script = ExtResource("3_3h1l8")
-dialogue_bubble = NodePath("../..")
 yarn_project = ExtResource("4_esc4m")
-auto_start = true
 presenters = [NodePath("../YarnLinePresenter")]
 metadata/_custom_type_script = "uid://flra500ihbix"
 
 [node name="YarnLinePresenter" type="Node" parent="TopPanel" unique_id=215617081 node_paths=PackedStringArray("text_label")]
 script = ExtResource("5_pfy0a")
-text_label = NodePath("../PanelContainer/TopTextLabel")
+text_label = NodePath("../TopTextLabel")
 click_anywhere_to_continue = false
 metadata/_custom_type_script = "uid://cged8u182768u"
 
 [connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
+[connection signal="dialogue_started" from="TopPanel/YarnDialogueRunner" to="." method="onDialogueStarted"]

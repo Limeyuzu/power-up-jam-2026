@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://d0iu7jtbmhpn3"]
 
-[ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="1_lj3dt"]
+[ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_lj3dt"]
 [ext_resource type="Script" uid="uid://br0775jgdwxg3" path="res://Scripts/player_movement.gd" id="1_m0s43"]
 [ext_resource type="Texture2D" uid="uid://b4wcbyagsiu8y" path="res://icon.svg" id="1_uskgd"]
 [ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="2_crf2g"]
+[ext_resource type="PackedScene" uid="uid://kgixkhyr4e25" path="res://Scenes/Level_2.tscn" id="2_irc8b"]
+[ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="3_2ts83"]
+[ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="5_2ts83"]
+[ext_resource type="Script" uid="uid://flra500ihbix" path="res://addons/yarn_spinner/dialogue_runner.gd" id="5_vtgv7"]
+[ext_resource type="Resource" uid="uid://dup74utxyd06b" path="res://Project.yarnproject" id="6_vtgv7"]
+[ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="7_cbptv"]
+[ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="8_fsk2n"]
+[ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_0jtpg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evltv"]
 size = Vector2(197, 81)
@@ -14,21 +22,20 @@ bg_color = Color(0.14041275, 0.6911776, 0.61381274, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0s43"]
 size = Vector2(84, 87)
 
-[node name="Node2D" type="Node2D" unique_id=1384450169]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtpg"]
+bg_color = Color(0, 0, 0, 1)
 
-[node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("1_lj3dt")]
-position = Vector2(48, 57)
-startNode = "Top"
+[node name="Level1" type="Node2D" unique_id=1384450169]
+script = ExtResource("1_lj3dt")
+target_level = ExtResource("2_irc8b")
 
-[node name="DialogueBubble2" parent="." unique_id=1449573999 instance=ExtResource("1_lj3dt")]
-position = Vector2(364, 355)
-startNode = "Bottom"
+[node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("3_2ts83")]
 
-[node name="DialogueBubble3" parent="." unique_id=498749518 instance=ExtResource("1_lj3dt")]
-position = Vector2(248, 738)
+[node name="DialogueBubble2" parent="." unique_id=1753328311 instance=ExtResource("3_2ts83")]
+position = Vector2(907, 555)
 
 [node name="Exit" type="Area2D" parent="." unique_id=65981014]
-position = Vector2(1037, 11)
+position = Vector2(1804, 11)
 script = ExtResource("2_crf2g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1599469015]
@@ -55,7 +62,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Spawn" type="Area2D" parent="." unique_id=178399655]
-position = Vector2(84, 577)
+position = Vector2(99, 992)
+script = ExtResource("5_2ts83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn" unique_id=1664351189]
 position = Vector2(14.5, 30.5)
@@ -87,8 +95,76 @@ offset_left = 345.0
 offset_top = 245.0
 offset_right = 832.0
 offset_bottom = 351.0
+
+[node name="YarnDialogueRunner" type="Node" parent="." unique_id=978152143 node_paths=PackedStringArray("presenters")]
+script = ExtResource("5_vtgv7")
+yarn_project = ExtResource("6_vtgv7")
+start_node = "Godot"
+auto_start = true
+presenters = [NodePath("../YarnLinePresenter")]
+metadata/_custom_type_script = "uid://flra500ihbix"
+
+[node name="YarnLinePresenter" type="Node" parent="." unique_id=1763649733 node_paths=PackedStringArray("text_label")]
+script = ExtResource("7_cbptv")
+text_label = NodePath("../RichTextLabel")
+metadata/_custom_type_script = "uid://cged8u182768u"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1730256542]
+offset_left = 1111.0
+offset_top = 424.0
+offset_right = 1435.0
+offset_bottom = 517.0
+
+[node name="YarnOptionsPresenter" type="Node" parent="." unique_id=52563849]
+script = ExtResource("8_fsk2n")
+metadata/_custom_type_script = "uid://cogqy630mjgv7"
+
+[node name="NonDiageticUI" type="CanvasLayer" parent="." unique_id=1761488485]
+
+[node name="Control" type="Control" parent="NonDiageticUI" unique_id=416934755]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("10_0jtpg")
+
+[node name="WinText" type="Label" parent="NonDiageticUI/Control" unique_id=2050740138]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.5
+offset_top = -53.0
+offset_right = 243.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.95629674, 0.6172894, 0.22802043, 1)
 theme_override_font_sizes/font_size = 77
 text = "You escaped!"
 
+[node name="NextLevelButton" type="Button" parent="NonDiageticUI/Control" unique_id=2104027857]
+visible = false
+layout_mode = 0
+offset_left = 714.0
+offset_top = 925.0
+offset_right = 1201.0
+offset_bottom = 1036.0
+theme_override_font_sizes/font_size = 61
+text = "Next Room"
+
+[node name="LevelSwipe" type="Panel" parent="NonDiageticUI" unique_id=348206722]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jtpg")
+
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
+[connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]

@@ -1,0 +1,247 @@
+[gd_scene format=3 uid="uid://kgixkhyr4e25"]
+
+[ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_001cu"]
+[ext_resource type="Script" uid="uid://cwuy1odofr5kx" path="res://Scripts/textbox_hazard.gd" id="2_5ufib"]
+[ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="3_diio2"]
+[ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="4_5ufib"]
+[ext_resource type="Script" uid="uid://br0775jgdwxg3" path="res://Scripts/player_movement.gd" id="4_v1bqs"]
+[ext_resource type="Texture2D" uid="uid://b4wcbyagsiu8y" path="res://icon.svg" id="5_7qdet"]
+[ext_resource type="PackedScene" uid="uid://bycra5buikrl0" path="res://Scenes/drag_player.tscn" id="5_diio2"]
+[ext_resource type="Script" uid="uid://flra500ihbix" path="res://addons/yarn_spinner/dialogue_runner.gd" id="6_57dsp"]
+[ext_resource type="Resource" uid="uid://dup74utxyd06b" path="res://Project.yarnproject" id="7_tm7ih"]
+[ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="8_25io1"]
+[ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="9_8gp1p"]
+[ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_yybfe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crf2g"]
+bg_color = Color(0.9098039, 0.40784314, 0.5568628, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_001cu"]
+resource_local_to_scene = true
+size = Vector2(140, 123.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evltv"]
+bg_color = Color(0.9098039, 0.40784314, 0.5568628, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crf2g"]
+resource_local_to_scene = true
+size = Vector2(140, 123.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evltv"]
+size = Vector2(197, 81)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtgv7"]
+bg_color = Color(0.14041275, 0.6911776, 0.61381274, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0s43"]
+size = Vector2(84, 87)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtpg"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Level2" type="Node2D" unique_id=1384450169]
+script = ExtResource("1_001cu")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1862267599 node_paths=PackedStringArray("panel", "textLabel", "collisionShape") groups=["hurtbox"]]
+position = Vector2(187, 151)
+script = ExtResource("2_5ufib")
+panel = NodePath("Panel")
+textLabel = NodePath("Panel/Label")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="Panel" type="PanelContainer" parent="Hurtbox" unique_id=1990585820]
+clip_contents = true
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 165.0
+offset_bottom = 162.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_crf2g")
+
+[node name="Label" type="RichTextLabel" parent="Hurtbox/Panel" unique_id=1870675742]
+layout_mode = 2
+text = "See? it's a differnent
+ level because the 
+text is different
+f
+f
+ff
+f"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1510199292]
+shape = SubResource("RectangleShape2D_001cu")
+debug_color = Color(0.78837734, 0.3481881, 0.6569848, 0.41960785)
+
+[node name="Hurtbox2" type="Area2D" parent="." unique_id=1123306631 node_paths=PackedStringArray("panel", "textLabel", "collisionShape") groups=["hurtbox"]]
+position = Vector2(555, 594)
+script = ExtResource("2_5ufib")
+panel = NodePath("Panel")
+textLabel = NodePath("Panel/Label")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="Panel" type="PanelContainer" parent="Hurtbox2" unique_id=292050422]
+clip_contents = true
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 461.0
+offset_bottom = 127.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_evltv")
+
+[node name="Label" type="RichTextLabel" parent="Hurtbox2/Panel" unique_id=1505411942]
+layout_mode = 2
+text = "baking bread making bread stacking bands
+money rising like yeast 
+haiku dot file extention"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox2" unique_id=362570535]
+position = Vector2(69, 64.25)
+shape = SubResource("RectangleShape2D_crf2g")
+debug_color = Color(0.78837734, 0.3481881, 0.6569848, 0.41960785)
+
+[node name="Exit" type="Area2D" parent="." unique_id=65981014]
+position = Vector2(1804, 11)
+script = ExtResource("3_diio2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1599469015]
+position = Vector2(14.5, 30.5)
+shape = SubResource("RectangleShape2D_evltv")
+
+[node name="Panel" type="Panel" parent="Exit" unique_id=85118077]
+offset_left = -84.0
+offset_top = -11.0
+offset_right = 113.0
+offset_bottom = 71.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
+
+[node name="Label" type="Label" parent="Exit/Panel" unique_id=1253635743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 46
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spawn" type="Area2D" parent="." unique_id=178399655]
+position = Vector2(86, 1008)
+script = ExtResource("4_5ufib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn" unique_id=1664351189]
+position = Vector2(14.5, 30.5)
+shape = SubResource("RectangleShape2D_evltv")
+
+[node name="Panel" type="Panel" parent="Spawn" unique_id=1941018802]
+offset_left = -84.0
+offset_top = -11.0
+offset_right = 113.0
+offset_bottom = 71.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
+
+[node name="DragPlayer" parent="." unique_id=1129877891 instance=ExtResource("5_diio2")]
+position = Vector2(288, 1032)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1174155624]
+position = Vector2(97, 1028)
+input_pickable = true
+script = ExtResource("4_v1bqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=466219140]
+position = Vector2(0.49998474, 0)
+scale = Vector2(0.6640623, 0.6718748)
+texture = ExtResource("5_7qdet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=798400588]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_m0s43")
+
+[node name="YarnDialogueRunner" type="Node" parent="." unique_id=978152143 node_paths=PackedStringArray("presenters")]
+script = ExtResource("6_57dsp")
+yarn_project = ExtResource("7_tm7ih")
+start_node = "Godot"
+auto_start = true
+presenters = [NodePath("../YarnLinePresenter")]
+metadata/_custom_type_script = "uid://flra500ihbix"
+
+[node name="YarnLinePresenter" type="Node" parent="." unique_id=1763649733 node_paths=PackedStringArray("text_label")]
+script = ExtResource("8_25io1")
+text_label = NodePath("../RichTextLabel")
+metadata/_custom_type_script = "uid://cged8u182768u"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1730256542]
+offset_left = 1111.0
+offset_top = 424.0
+offset_right = 1435.0
+offset_bottom = 517.0
+
+[node name="YarnOptionsPresenter" type="Node" parent="." unique_id=52563849]
+script = ExtResource("9_8gp1p")
+metadata/_custom_type_script = "uid://cogqy630mjgv7"
+
+[node name="NonDiageticUI" type="CanvasLayer" parent="." unique_id=1761488485]
+
+[node name="Control" type="Control" parent="NonDiageticUI" unique_id=416934755]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+script = ExtResource("10_yybfe")
+
+[node name="WinText" type="Label" parent="NonDiageticUI/Control" unique_id=660866934]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.5
+offset_top = -53.0
+offset_right = 243.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95629674, 0.6172894, 0.22802043, 1)
+theme_override_font_sizes/font_size = 77
+text = "You escaped!"
+
+[node name="NextLevelButton" type="Button" parent="NonDiageticUI/Control" unique_id=2104027857]
+visible = false
+layout_mode = 0
+offset_left = 714.0
+offset_top = 925.0
+offset_right = 1201.0
+offset_bottom = 1036.0
+theme_override_font_sizes/font_size = 61
+text = "Next Room"
+
+[node name="LevelSwipe" type="Panel" parent="NonDiageticUI" unique_id=348206722]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jtpg")
+
+[connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
+[connection signal="body_entered" from="Hurtbox2" to="Hurtbox2" method="_on_body_entered"]
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
+[connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]
