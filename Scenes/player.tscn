@@ -6,6 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 
 [node name="Player" type="CharacterBody2D" unique_id=188212945]
+collision_mask = 3
 input_pickable = true
 script = ExtResource("1_cvnsp")
 is_mouse_move = true
