@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://cx30hg3u3nvc3"]
 
 [ext_resource type="Script" uid="uid://br0775jgdwxg3" path="res://Scripts/player_movement.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://b4wcbyagsiu8y" path="res://icon.svg" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://bfd7guxosso16" path="res://sprites/Character Sprites/Helen of Rivia.png" id="2_cvnsp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0s43"]
-size = Vector2(84, 87)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 
 [node name="Player" type="CharacterBody2D" unique_id=188212945]
 input_pickable = true
@@ -12,19 +11,20 @@ script = ExtResource("1_cvnsp")
 is_mouse_move = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=539903033]
-position = Vector2(0.49998474, 0)
-scale = Vector2(0.6640623, 0.6718748)
-texture = ExtResource("2_6t5aa")
+position = Vector2(-4.9999995, -0.99999994)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284862590]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_m0s43")
+scale = Vector2(3.2937672, 3.3516552)
+shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="Button" type="Button" parent="." unique_id=874143699]
 offset_left = -41.0
 offset_top = -43.0
 offset_right = 43.0
 offset_bottom = 44.0
+flat = true
 
 [node name="HintLabel" type="Label" parent="." unique_id=676835355]
 offset_left = -51.0

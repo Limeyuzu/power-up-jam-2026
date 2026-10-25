@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarn_spinner.yarn_file"
+type="Resource"
+uid="uid://llfqq1lwlco0"
+path="res://.godot/imported/npc-dialogue.yarn-3a97aedeea7bc52a75a4dae5f700de28.res"
+
+[deps]
+
+source_file="res://npc-dialogue.yarn"
+dest_files=["res://.godot/imported/npc-dialogue.yarn-3a97aedeea7bc52a75a4dae5f700de28.res"]
+
+[params]
+

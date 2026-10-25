@@ -9,11 +9,13 @@ var spawn_coordinates = Vector2(0,0)
 
 var dragging = false
 var offset = Vector2(0,0)
+var originalScale: Vector2
 
 func _ready() -> void:
 	Signals.Level_Complete.connect(_win)
 	Signals.Player_Death.connect(_die)
 	Signals.Set_Spawn.connect(_set_spawn)
+	originalScale = $Sprite2D.scale
 	
 	if is_mouse_move == true:
 		$HintLabel.text = str("click to move")
@@ -69,7 +71,7 @@ func _respawn():
 	global_position = spawn_coordinates
 	var tween = get_tree().create_tween().set_parallel(true)
 	tween.tween_property($Sprite2D, "modulate", Color.WHITE, 1.0).set_trans(Tween.TRANS_SINE)
-	tween.tween_property($Sprite2D, "scale", Vector2(0.664,0.664), 1.0).set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property($Sprite2D, "scale", originalScale, 1.0).set_trans(Tween.TRANS_BOUNCE)
 	tween.chain().tween_property(self, "is_dead", false, 0)
 
 
