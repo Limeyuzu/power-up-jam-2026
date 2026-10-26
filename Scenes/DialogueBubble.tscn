@@ -96,3 +96,4 @@ metadata/_custom_type_script = "uid://cged8u182768u"
 
 [connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
 [connection signal="dialogue_started" from="TopPanel/YarnDialogueRunner" to="." method="onDialogueStarted"]
+[connection signal="dialogue_started" from="TopPanel/YarnDialogueRunner" to="Hurtbox" method="onDialogueStarted"]

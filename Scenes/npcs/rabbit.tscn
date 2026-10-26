@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c2e6070cdp5be"]
 
 [ext_resource type="Texture2D" uid="uid://d008imiyrg77y" path="res://sprites/Character Sprites/Scared Bunny.png" id="1_bfjmj"]
-[ext_resource type="Script" uid="uid://djxqlxkrqq3l4" path="res://Scripts/npc.gd" id="1_ia7lw"]
+[ext_resource type="Script" uid="uid://cnaf3kvik6ils" path="res://Scripts/npc.gd" id="1_ia7lw"]
 [ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="2_ia7lw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ji530"]
 
 [node name="Rabbit" type="Node2D" unique_id=1535402762 node_paths=PackedStringArray("dialogueBubble")]
 script = ExtResource("1_ia7lw")
@@ -14,3 +16,14 @@ texture = ExtResource("1_bfjmj")
 
 [node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("2_ia7lw")]
 startNode = "Rabbit"
+
+[node name="DetectionRadius" type="Area2D" parent="." unique_id=888721954]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius" unique_id=452495579]
+scale = Vector2(35.477383, 33.55272)
+shape = SubResource("CircleShape2D_ji530")
+debug_color = Color(0.6015453, 0.52531743, 0.3912647, 0.41960785)
+
+[connection signal="body_entered" from="DetectionRadius" to="." method="onDetectedPlayer"]

@@ -6,7 +6,7 @@ extends Area2D
 
 var margins = 10;
 
-func _ready() -> void:
+func onDialogueStarted() -> void:
 	await textLabel.finished
 	await get_tree().process_frame
 	var rect = panel.get_rect()

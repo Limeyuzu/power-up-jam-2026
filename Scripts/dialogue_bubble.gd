@@ -11,10 +11,11 @@ var panelDistanceFromOrigin = 20
 
 func _ready() -> void:
 	initialPanelSize = parentPanel.size
+	
+func startDialogue() -> void:
 	dialogueRunner.start_dialogue.call_deferred(startNode)
 
 func onDialogueStarted() -> void:
-	print("start")
 	ACVoicebox.base_pitch = randf_range(1.5, 4.0)
 	ACVoicebox.play_string(speechStrings[randi() % 3])
 	
