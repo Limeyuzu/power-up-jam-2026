@@ -25,9 +25,11 @@ content_margin_right = 50.0
 content_margin_bottom = 80.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="DialogueBubble" type="Node2D" unique_id=742978764 node_paths=PackedStringArray("dialogueRunner")]
+[node name="DialogueBubble" type="Node2D" unique_id=742978764 node_paths=PackedStringArray("dialogueRunner", "bubbleTexture", "parentPanel")]
 script = ExtResource("1_cto1i")
 dialogueRunner = NodePath("TopPanel/YarnDialogueRunner")
+bubbleTexture = NodePath("TopPanel/NinePatchRect")
+parentPanel = NodePath("TopPanel")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1992005786 node_paths=PackedStringArray("panel", "textLabel", "collisionShape") groups=["hurtbox"]]
 script = ExtResource("1_le7rw")
@@ -41,12 +43,19 @@ debug_color = Color(0.6767672, 0.42960477, 0.7029842, 0.41960785)
 
 [node name="TopPanel" type="PanelContainer" parent="." unique_id=1756780005]
 clip_contents = true
-offset_right = 622.0
-offset_bottom = 110.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -270.0
+offset_right = 661.0
+offset_bottom = -20.0
+grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_evltv")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="TopPanel" unique_id=747705187]
 layout_mode = 2
+offset_transform_enabled = true
 texture = ExtResource("3_esc4m")
 patch_margin_left = 20
 patch_margin_top = 50
