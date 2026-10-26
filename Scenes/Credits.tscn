@@ -1,3 +1,202 @@
 [gd_scene format=3 uid="uid://cxjgukpbun5dm"]
 
-[node name="Credits" type="Node2D" unique_id=1092177124]
+[ext_resource type="FontFile" uid="uid://d3uwru8imcjj1" path="res://fonts/DarumadropOne-Regular.ttf" id="1_ccovl"]
+[ext_resource type="FontFile" uid="uid://cstr8mp1pm1bs" path="res://fonts/Barriecito-Regular.ttf" id="2_1bamb"]
+[ext_resource type="Texture2D" uid="uid://bvib53rw3xq78" path="res://sprites/Environment Sprites/Posters/Anime Poster 2.png" id="3_xelri"]
+[ext_resource type="AudioStream" uid="uid://dnb1we5lswtuk" path="res://Sounds/PowerUp2026 25Oct26PM very draft2.mp3" id="4_1bamb"]
+[ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="4_xelri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwrjw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_xelri"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer2:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uah1q"]
+resource_name = "credit_scroll"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.0333333, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer2:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7emq5"]
+_data = {
+&"RESET": SubResource("Animation_xelri"),
+&"credit_scroll": SubResource("Animation_uah1q")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bamb"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Node2D" unique_id=1227462849]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=911108455]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwrjw")
+
+[node name="Control" type="Control" parent="." unique_id=1902444483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsHeader" type="RichTextLabel" parent="Control" unique_id=291581350]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 1289.0
+offset_bottom = 293.0
+theme_override_fonts/normal_font = ExtResource("1_ccovl")
+theme_override_font_sizes/normal_font_size = 150
+text = "CREDITS"
+
+[node name="ProjectRole3" type="RichTextLabel" parent="Control" unique_id=943734078]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 624.0
+offset_right = 927.0
+offset_bottom = 695.0
+theme_override_fonts/normal_font = ExtResource("1_ccovl")
+theme_override_font_sizes/normal_font_size = 48
+text = "PROJECT ROLE"
+
+[node name="PersonName3" type="RichTextLabel" parent="Control" unique_id=237000662]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 691.0
+offset_right = 1527.0
+offset_bottom = 783.0
+theme_override_colors/default_color = Color(1, 0, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_1bamb")
+theme_override_font_sizes/normal_font_size = 80
+text = "Firstname Lastname"
+
+[node name="ProjectRole2" type="RichTextLabel" parent="Control" unique_id=1002730145]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 896.0
+offset_right = 607.0
+offset_bottom = 967.0
+theme_override_fonts/normal_font = ExtResource("1_ccovl")
+theme_override_font_sizes/normal_font_size = 48
+text = "PROJECT ROLE"
+
+[node name="PersonName2" type="RichTextLabel" parent="Control" unique_id=1512803345]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 963.0
+offset_right = 1207.0
+offset_bottom = 1055.0
+theme_override_colors/default_color = Color(1, 0, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_1bamb")
+theme_override_font_sizes/normal_font_size = 80
+text = "Firstname Lastname"
+
+[node name="ProjectRole" type="RichTextLabel" parent="Control" unique_id=1574201939]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 317.0
+offset_right = 613.0
+offset_bottom = 388.0
+theme_override_fonts/normal_font = ExtResource("1_ccovl")
+theme_override_font_sizes/normal_font_size = 48
+text = "PROJECT ROLE"
+
+[node name="PersonName" type="RichTextLabel" parent="Control" unique_id=841039649]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 384.0
+offset_right = 1213.0
+offset_bottom = 476.0
+theme_override_colors/default_color = Color(1, 0, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_1bamb")
+theme_override_font_sizes/normal_font_size = 80
+text = "Firstname Lastname"
+
+[node name="Poster" type="Sprite2D" parent="Control" unique_id=1703117087]
+position = Vector2(1112, 448.00003)
+rotation = 0.23561946
+scale = Vector2(0.79696155, 0.7969615)
+texture = ExtResource("3_xelri")
+
+[node name="Poster" type="Sprite2D" parent="Control/Poster" unique_id=1770039123]
+position = Vector2(-981.5194, 555.66614)
+rotation = -0.3926991
+texture = ExtResource("4_xelri")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=36952793]
+libraries/ = SubResource("AnimationLibrary_7emq5")
+autoplay = &"credit_scroll"
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control" unique_id=1938853086]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bamb")
+
+[node name="PowerUp202625Oct26pmVeryDraft2" type="AudioStreamPlayer" parent="." unique_id=846505015]
+stream = ExtResource("4_1bamb")
+volume_db = -13.0
+autoplay = true
