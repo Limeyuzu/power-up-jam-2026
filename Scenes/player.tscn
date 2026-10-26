@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://br0775jgdwxg3" path="res://Scripts/player_movement.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bfd7guxosso16" path="res://sprites/Character Sprites/Helen of Rivia.png" id="2_cvnsp"]
+[ext_resource type="AudioStream" uid="uid://7c48bsadybov" path="res://Sounds/die-sfx.mp3" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 
@@ -35,6 +36,10 @@ offset_bottom = -49.0
 text = "click to move"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1726051357]
+
+[node name="DieSfx" type="AudioStreamPlayer" parent="." unique_id=1478523421]
+stream = ExtResource("3_6t5aa")
+volume_db = 11.709
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

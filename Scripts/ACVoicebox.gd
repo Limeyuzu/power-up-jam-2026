@@ -49,6 +49,7 @@ var remaining_sounds := []
 
 func _ready():
 	connect("finished", play_next_sound)
+	volume_db = -7
 
 
 func play_string(in_string: String):

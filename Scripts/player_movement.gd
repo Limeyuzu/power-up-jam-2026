@@ -61,6 +61,7 @@ func _die():
 	is_dead = true
 	dragging = false
 	velocity = Vector2(0,0)
+	$DieSfx.play()
 	var tween = get_tree().create_tween().set_parallel(true)
 	tween.tween_property($Sprite2D, "modulate", Color.RED, 1.0).set_trans(Tween.TRANS_SINE)
 	tween.tween_property($Sprite2D, "scale", Vector2(), 1.0).set_trans(Tween.TRANS_BOUNCE)
