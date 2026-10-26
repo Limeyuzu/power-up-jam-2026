@@ -21,6 +21,7 @@ run/name="Convo dodger"
 YarnSpinner="*uid://bhiw7fae5n1e8"
 Signals="*uid://bpmmp11kafro0"
 ACVoicebox="*uid://b73odmyph68kf"
+Audio="*uid://cmssfpa2clnvf"
 
 [debug]
 

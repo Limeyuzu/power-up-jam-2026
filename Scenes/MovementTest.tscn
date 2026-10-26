@@ -145,6 +145,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("6_irc8b")]
 position = Vector2(130, 535)
+collision_layer = 1
+collision_mask = 3
 is_mouse_move = false
 
 [node name="WinText" type="Label" parent="." unique_id=660866934]
@@ -211,10 +213,12 @@ offset_bottom = 517.0
 [node name="Rabbit" parent="." unique_id=1854306438 instance=ExtResource("14_hibly")]
 position = Vector2(1022, 127)
 dialogueOrientation = 1
+startNode = "Default"
 
 [node name="Dog" parent="." unique_id=1535402762 instance=ExtResource("14_gia7o")]
 position = Vector2(1009, 808)
 dialogueOrientation = 3
+startNode = "Default"
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]

@@ -2,21 +2,31 @@
 
 [ext_resource type="Script" uid="uid://bw2djmeu1po1m" path="res://Scripts/door.gd" id="1_p0e35"]
 [ext_resource type="Texture2D" uid="uid://cle4le6ftf387" path="res://sprites/Environment Sprites/Doors/door open.png" id="2_p0e35"]
+[ext_resource type="Texture2D" uid="uid://dcyb8y8yj333h" path="res://sprites/Environment Sprites/Doors/door cclosed.png" id="3_fahql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuyls"]
-size = Vector2(197, 200)
+size = Vector2(340, 220)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
+size = Vector2(339, 99)
 
 [node name="Door" type="StaticBody2D" unique_id=125407365 node_paths=PackedStringArray("assigned_keys")]
 script = ExtResource("1_p0e35")
 assigned_keys = [null, null]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=376775167]
+[node name="DoorOpen_Sprite" type="Sprite2D" parent="." unique_id=376775167]
+visible = false
 modulate = Color(0.4504755, 0.8054581, 0.99910337, 1)
 scale = Vector2(1.2870967, 0.5773639)
 texture = ExtResource("2_p0e35")
 
+[node name="DoorClosed_Spite" type="Sprite2D" parent="." unique_id=1786426118]
+modulate = Color(0.4504755, 0.8054581, 0.99910337, 1)
+scale = Vector2(1.2870967, 0.5773639)
+texture = ExtResource("3_fahql")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=804282171]
-position = Vector2(-2.5, -1)
+position = Vector2(-1, 27)
 shape = SubResource("RectangleShape2D_yuyls")
 
 [node name="KeysRemainingLabel" type="Label" parent="." unique_id=459193067]
@@ -26,3 +36,18 @@ offset_right = 24.0
 offset_bottom = 59.0
 theme_override_font_sizes/font_size = 91
 text = "1"
+
+[node name="ExitText" type="Label" parent="." unique_id=856997079]
+offset_left = -25.0
+offset_top = -119.0
+offset_right = 15.0
+offset_bottom = -96.0
+text = "Exit"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1061103676]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=114434762]
+position = Vector2(-1.5, 187.5)
+shape = SubResource("RectangleShape2D_qnpof")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
