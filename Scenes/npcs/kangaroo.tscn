@@ -8,6 +8,7 @@
 
 [node name="Kangaroo" type="Node2D" unique_id=1535402762 node_paths=PackedStringArray("dialogueBubble")]
 script = ExtResource("1_3uyo1")
+startNode = "Kangaroo"
 dialogueBubble = NodePath("DialogueBubble")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784926523]
@@ -15,7 +16,6 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_3uyo1")
 
 [node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("3_fnipn")]
-startNode = "Kangaroo"
 
 [node name="DetectionRadius" type="Area2D" parent="." unique_id=985763817]
 collision_layer = 0

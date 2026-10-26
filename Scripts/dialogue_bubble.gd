@@ -1,13 +1,13 @@
 extends Node2D
 class_name DialogueBubble
 
-@export var startNode = "Default"
 @export var dialogueRunner: YarnDialogueRunner
 @export var bubbleTexture: NinePatchRect
 @export var parentPanel: Control
 
 var initialPanelSize: Vector2
 var panelDistanceFromOrigin = 20
+var startNode = "Default"
 
 func _ready() -> void:
 	initialPanelSize = parentPanel.size

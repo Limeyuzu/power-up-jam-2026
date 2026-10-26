@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_8rwkh"]
 [ext_resource type="Texture2D" uid="uid://djck814hb158w" path="res://sprites/floor.jpg" id="2_43geq"]
-[ext_resource type="PackedScene" uid="uid://d2i7s0jwp2h61" path="res://Scenes/credits.tscn" id="2_rhay7"]
+[ext_resource type="PackedScene" uid="uid://cxjgukpbun5dm" path="res://Scenes/credits.tscn" id="2_rhay7"]
 [ext_resource type="Texture2D" uid="uid://dxdpwdmxneer8" path="res://sprites/wall.JPG" id="3_kon3q"]
 [ext_resource type="PackedScene" uid="uid://do7pjg2bnp6lp" path="res://Scenes/rail_walker.tscn" id="4_kon3q"]
 [ext_resource type="Texture2D" uid="uid://b7wtwk78qh1dc" path="res://sprites/Environment Sprites/Stage.png" id="4_vw5ax"]
