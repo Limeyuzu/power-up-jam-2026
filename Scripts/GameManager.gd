@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @export var target_level : PackedScene
 

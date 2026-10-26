@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bvar0gl6b5md7"]
+
+[ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_60ddj"]
+[ext_resource type="PackedScene" uid="uid://d0iu7jtbmhpn3" path="res://Scenes/level_1.tscn" id="2_5e717"]
+[ext_resource type="Texture2D" uid="uid://c811wmpj52xwh" path="res://sprites/start-screen.png" id="2_60ddj"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_60ddj"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_60ddj"]
+events = [SubResource("InputEventKey_60ddj")]
+
+[node name="StartScreen" type="Control" unique_id=1801059902]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60ddj")
+target_level = ExtResource("2_5e717")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1955940068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_60ddj")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1884634642]
+layout_mode = 0
+offset_left = 1366.0
+offset_top = 284.0
+offset_right = 1406.0
+offset_bottom = 324.0
+scale = Vector2(7.2732697, 3.2322342)
+shortcut = SubResource("Shortcut_60ddj")
+
+[connection signal="pressed" from="TextureButton" to="." method="goto_next_level"]
