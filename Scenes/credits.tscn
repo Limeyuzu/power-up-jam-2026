@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://d3uwru8imcjj1" path="res://fonts/DarumadropOne-Regular.ttf" id="1_ccovl"]
 [ext_resource type="FontFile" uid="uid://cstr8mp1pm1bs" path="res://fonts/Barriecito-Regular.ttf" id="2_1bamb"]
 [ext_resource type="Texture2D" uid="uid://bvib53rw3xq78" path="res://sprites/Environment Sprites/Posters/Anime Poster 2.png" id="3_xelri"]
-[ext_resource type="AudioStream" uid="uid://dnb1we5lswtuk" path="res://Sounds/PowerUp2026 25Oct26PM very draft2.mp3" id="4_1bamb"]
 [ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="4_xelri"]
+[ext_resource type="AudioStream" uid="uid://bckw5wrymw74p" path="res://Sounds/credits.mp3" id="5_xelri"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwrjw"]
 bg_color = Color(0, 0, 0, 1)
@@ -196,7 +196,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1bamb")
 
-[node name="PowerUp202625Oct26pmVeryDraft2" type="AudioStreamPlayer" parent="." unique_id=846505015]
-stream = ExtResource("4_1bamb")
-volume_db = -13.0
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=846505015]
+stream = ExtResource("5_xelri")
 autoplay = true
+parameters/looping = true
