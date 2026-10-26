@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://do7pjg2bnp6lp"]
+
+[ext_resource type="Script" uid="uid://drm8iyka18tt4" path="res://Scripts/RailWalker.gd" id="1_q0nh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuyls"]
+size = Vector2(94, 127)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1736988554]
+script = ExtResource("1_q0nh4")
+distance = Vector2(300, 0)
+phase_offset = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2128442222]
+position = Vector2(37, 53.5)
+shape = SubResource("RectangleShape2D_yuyls")

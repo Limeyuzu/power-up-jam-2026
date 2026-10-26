@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_kqn1a"]
 [ext_resource type="Texture2D" uid="uid://djck814hb158w" path="res://sprites/floor.jpg" id="2_ope7d"]
+[ext_resource type="PackedScene" uid="uid://bby01iko4lb4u" path="res://Scenes/Level_4.tscn" id="2_qlmpr"]
 [ext_resource type="Texture2D" uid="uid://dxdpwdmxneer8" path="res://sprites/wall.JPG" id="3_qe2l3"]
 [ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="4_a1204"]
 [ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="4_hwx6u"]
@@ -49,6 +50,7 @@ size = Vector2(94, 127)
 
 [node name="Level3" type="Node2D" unique_id=1384450169]
 script = ExtResource("1_kqn1a")
+target_level = ExtResource("2_qlmpr")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=1334116005]
 modulate = Color(0.99613255, 0.9133034, 0.73503715, 0.7019608)
@@ -158,6 +160,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("6_qlmpr")]
 position = Vector2(1096, 1035)
+collision_layer = 1
+collision_mask = 3
 is_mouse_move = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1730256542]
