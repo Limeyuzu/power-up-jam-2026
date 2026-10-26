@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="8_25io1"]
 [ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="9_8gp1p"]
 [ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_yybfe"]
-[ext_resource type="Texture2D" uid="uid://cy42bsvmlggtd" path="res://sprites/player.png" id="11_5ufib"]
 [ext_resource type="PackedScene" uid="uid://cbh6wkodlsbwa" path="res://Scenes/key.tscn" id="12_v1bqs"]
 [ext_resource type="PackedScene" uid="uid://dsh8expeklfeo" path="res://Scenes/door.tscn" id="13_7qdet"]
 
@@ -234,24 +233,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0jtpg")
 position = Vector2(858.5, 39.5)
 shape = SubResource("RectangleShape2D_qnpof")
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1893576437]
-modulate = Color(0.13682577, 0.13682574, 0.13682571, 1)
-position = Vector2(859.5, 41.499996)
-scale = Vector2(26.890627, 1.1571428)
-texture = ExtResource("11_5ufib")
-
 [node name="Wall2" type="StaticBody2D" parent="." unique_id=2064159483]
 position = Vector2(0, 996)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=729567127]
 position = Vector2(858.5, 39.5)
 shape = SubResource("RectangleShape2D_qnpof")
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=1942616244]
-modulate = Color(0.13682577, 0.13682574, 0.13682571, 1)
-position = Vector2(859.5, 41.499996)
-scale = Vector2(26.890627, 1.1571428)
-texture = ExtResource("11_5ufib")
 
 [node name="Key" parent="." unique_id=255064478 instance=ExtResource("12_v1bqs")]
 position = Vector2(1105, 398)
