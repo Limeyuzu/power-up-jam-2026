@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnb1we5lswtuk"
+path="res://.godot/imported/PowerUp2026 25Oct26PM very draft2.mp3-fa31d8ba842f356cd879ff0a96039633.mp3str"
+
+[deps]
+
+source_file="res://Sounds/PowerUp2026 25Oct26PM very draft2.mp3"
+dest_files=["res://.godot/imported/PowerUp2026 25Oct26PM very draft2.mp3-fa31d8ba842f356cd879ff0a96039633.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
