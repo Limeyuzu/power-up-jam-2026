@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="11_qvwxf"]
 [ext_resource type="PackedScene" uid="uid://b86qgtavmx8un" path="res://Scenes/npcs/dog.tscn" id="14_gia7o"]
 [ext_resource type="PackedScene" uid="uid://c2e6070cdp5be" path="res://Scenes/npcs/rabbit.tscn" id="14_hibly"]
+[ext_resource type="AudioStream" uid="uid://of3q0gsjfwan" path="res://Sounds/level-music.mp3" id="18_qvwxf"]
+[ext_resource type="AudioStream" uid="uid://cj8qndlm6paf7" path="res://Sounds/Crowd.ogg" id="19_wqw3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jtpg"]
 texture = ExtResource("4_lj3dt")
@@ -215,6 +217,14 @@ dialogueOrientation = 1
 [node name="Dog" parent="." unique_id=1535402762 instance=ExtResource("14_gia7o")]
 position = Vector2(1009, 808)
 dialogueOrientation = 3
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=1311409010]
+stream = ExtResource("18_qvwxf")
+autoplay = true
+
+[node name="CrowdNoise" type="AudioStreamPlayer" parent="." unique_id=2139441595]
+stream = ExtResource("19_wqw3y")
+autoplay = true
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]

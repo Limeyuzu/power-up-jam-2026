@@ -4,7 +4,5 @@ extends Node2D
 @export var dialogueBubble: DialogueBubble
 
 
-
 func _ready() -> void:
-	print("set orien", dialogueOrientation)
 	dialogueBubble.setOrientation(dialogueOrientation)
