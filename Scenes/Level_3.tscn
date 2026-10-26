@@ -160,7 +160,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("6_qlmpr")]
 position = Vector2(1096, 1035)
-collision_layer = 1
 collision_mask = 3
 is_mouse_move = false
 
@@ -242,6 +241,7 @@ shape = SubResource("RectangleShape2D_yuyls")
 
 [node name="Rabbit" parent="AnimatableBody2D" unique_id=1535402762 instance=ExtResource("12_dimxf")]
 position = Vector2(39, 52)
+startNode = "Default"
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=454311985]
 position = Vector2(667, 26)
@@ -255,6 +255,7 @@ shape = SubResource("RectangleShape2D_yuyls")
 [node name="Rabbit" parent="AnimatableBody2D2" unique_id=1649787881 instance=ExtResource("12_dimxf")]
 position = Vector2(39, 52)
 dialogueOrientation = 1
+startNode = "Default"
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]

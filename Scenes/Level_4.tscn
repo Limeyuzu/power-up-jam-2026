@@ -210,6 +210,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("12_i2d2m")]
 position = Vector2(1096, 1035)
+collision_mask = 3
 is_mouse_move = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1730256542]

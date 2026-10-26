@@ -150,7 +150,8 @@ offset_bottom = 71.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("5_001cu")]
-position = Vector2(235, 912)
+position = Vector2(247, 870)
+collision_mask = 3
 is_mouse_move = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1730256542]
@@ -234,6 +235,7 @@ shape = SubResource("RectangleShape2D_yuyls")
 
 [node name="Rabbit" parent="AnimatableBody2D" unique_id=1535402762 instance=ExtResource("15_57dsp")]
 position = Vector2(39, 52)
+startNode = "Default"
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=454311985]
 position = Vector2(917, 237)
@@ -246,12 +248,15 @@ shape = SubResource("RectangleShape2D_yuyls")
 
 [node name="Rabbit" parent="AnimatableBody2D2" unique_id=1649787881 instance=ExtResource("15_57dsp")]
 position = Vector2(39, 52)
+startNode = "Default"
 
 [node name="Dog" parent="." unique_id=1266248525 instance=ExtResource("13_tm7ih")]
 position = Vector2(1905, 878)
+startNode = "Default"
 
 [node name="Dog2" parent="." unique_id=581307674 instance=ExtResource("13_tm7ih")]
 position = Vector2(2066, 1043)
+startNode = "Default"
 
 [node name="Kangaroo" parent="." unique_id=1417108574 instance=ExtResource("14_8gp1p")]
 position = Vector2(5, 601)

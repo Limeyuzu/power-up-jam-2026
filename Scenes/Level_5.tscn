@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_8rwkh"]
 [ext_resource type="Texture2D" uid="uid://djck814hb158w" path="res://sprites/floor.jpg" id="2_43geq"]
-[ext_resource type="PackedScene" uid="uid://cxjgukpbun5dm" path="res://Scenes/credits.tscn" id="2_rhay7"]
+[ext_resource type="PackedScene" uid="uid://d2i7s0jwp2h61" path="res://Scenes/Credits.tscn" id="2_rhay7"]
 [ext_resource type="Texture2D" uid="uid://dxdpwdmxneer8" path="res://sprites/wall.JPG" id="3_kon3q"]
 [ext_resource type="PackedScene" uid="uid://do7pjg2bnp6lp" path="res://Scenes/rail_walker.tscn" id="4_kon3q"]
 [ext_resource type="Texture2D" uid="uid://b7wtwk78qh1dc" path="res://sprites/Environment Sprites/Stage.png" id="4_vw5ax"]
@@ -312,6 +312,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("14_22ah2")]
 position = Vector2(1091, 1714)
+collision_mask = 3
 is_mouse_move = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1730256542]
@@ -378,10 +379,12 @@ position = Vector2(2969, 640)
 [node name="Dog" parent="." unique_id=602592560 instance=ExtResource("19_vw5ax")]
 position = Vector2(754, 251)
 dialogueOrientation = 3
+startNode = "Default"
 
 [node name="Dog2" parent="." unique_id=762546780 instance=ExtResource("19_vw5ax")]
 position = Vector2(34, 185)
 dialogueOrientation = 3
+startNode = "Default"
 
 [node name="Elephant" parent="." unique_id=423945087 instance=ExtResource("6_h33cd")]
 position = Vector2(2600, 1009)
