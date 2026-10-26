@@ -49,7 +49,7 @@ anchor_bottom = 1.0
 offset_left = 20.0
 offset_top = -270.0
 offset_right = 661.0
-offset_bottom = -20.0
+offset_bottom = -96.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_evltv")
 
@@ -60,7 +60,7 @@ texture = ExtResource("3_esc4m")
 patch_margin_left = 20
 patch_margin_top = 50
 patch_margin_right = 20
-patch_margin_bottom = 200
+patch_margin_bottom = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="TopPanel" unique_id=1811214263]
 layout_mode = 2
