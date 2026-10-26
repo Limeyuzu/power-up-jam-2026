@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cb173m8y1w5xu" path="res://sprites/ui-bubble.png" id="6_5a7ho"]
 [ext_resource type="Texture2D" uid="uid://bvaqqpolqcgl8" path="res://sprites/Start Screen Sprites/Helen Yowling.png" id="6_akot6"]
 [ext_resource type="FontFile" uid="uid://d3uwru8imcjj1" path="res://fonts/DarumadropOne-Regular.ttf" id="7_ssogg"]
+[ext_resource type="Texture2D" uid="uid://dbuo3q02y2jxj" path="res://sprites/ui-button.png" id="9_c1457"]
+[ext_resource type="Texture2D" uid="uid://vg5727fgv25r" path="res://sprites/ui-button-pressed.png" id="10_64bn7"]
+[ext_resource type="Texture2D" uid="uid://det3iuts5w3q7" path="res://sprites/ui-button-hover.png" id="11_357se"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_60ddj"]
 device = -1
@@ -83,11 +86,13 @@ texture = ExtResource("6_akot6")
 layout_mode = 0
 offset_left = 1068.0
 offset_top = 334.0
-offset_right = 1648.0
-offset_bottom = 634.0
+offset_right = 1699.0
+offset_bottom = 637.0
 scale = Vector2(0.6764361, 0.5822915)
 shortcut = SubResource("Shortcut_60ddj")
-texture_normal = ExtResource("6_5a7ho")
+texture_normal = ExtResource("9_c1457")
+texture_pressed = ExtResource("10_64bn7")
+texture_hover = ExtResource("11_357se")
 
 [node name="Label" type="Label" parent="TextureButton" unique_id=1172886638]
 layout_mode = 0
@@ -95,6 +100,7 @@ offset_left = 143.39859
 offset_top = 15.456173
 offset_right = 478.3986
 offset_bottom = 233.45618
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_ssogg")
 theme_override_font_sizes/font_size = 150
 text = "PLAY"

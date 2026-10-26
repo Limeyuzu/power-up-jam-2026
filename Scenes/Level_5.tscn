@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_8rwkh"]
 [ext_resource type="Texture2D" uid="uid://djck814hb158w" path="res://sprites/floor.jpg" id="2_43geq"]
-[ext_resource type="PackedScene" uid="uid://d2i7s0jwp2h61" path="res://Scenes/Credits.tscn" id="2_rhay7"]
+[ext_resource type="PackedScene" uid="uid://cxjgukpbun5dm" path="res://Scenes/Credits.tscn" id="2_rhay7"]
 [ext_resource type="Texture2D" uid="uid://dxdpwdmxneer8" path="res://sprites/wall.JPG" id="3_kon3q"]
 [ext_resource type="PackedScene" uid="uid://do7pjg2bnp6lp" path="res://Scenes/rail_walker.tscn" id="4_kon3q"]
 [ext_resource type="Texture2D" uid="uid://b7wtwk78qh1dc" path="res://sprites/Environment Sprites/Stage.png" id="4_vw5ax"]
@@ -22,11 +22,11 @@
 [ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="13_823je"]
 [ext_resource type="PackedScene" uid="uid://cx30hg3u3nvc3" path="res://Scenes/player.tscn" id="14_22ah2"]
 [ext_resource type="Texture2D" uid="uid://cp6tb0ew30phx" path="res://sprites/Environment Sprites/BIG BEAR.png" id="14_mtm34"]
-[ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="15_jei1r"]
 [ext_resource type="PackedScene" uid="uid://cbh6wkodlsbwa" path="res://Scenes/key.tscn" id="16_mtm34"]
 [ext_resource type="PackedScene" uid="uid://dsh8expeklfeo" path="res://Scenes/door.tscn" id="17_ev0e5"]
 [ext_resource type="PackedScene" uid="uid://b86qgtavmx8un" path="res://Scenes/npcs/dog.tscn" id="19_vw5ax"]
 [ext_resource type="PackedScene" uid="uid://b13ntuyeacxx3" path="res://Scenes/npcs/kangaroo.tscn" id="20_q2y8u"]
+[ext_resource type="PackedScene" uid="uid://dth3qva5gxrlc" path="res://Scenes/button_next_level.tscn" id="23_c4hym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yybfe"]
 texture = ExtResource("3_kon3q")
@@ -52,9 +52,6 @@ size = Vector2(197, 81)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtgv7"]
 bg_color = Color(0.14041275, 0.6911776, 0.61381274, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtpg"]
-bg_color = Color(0, 0, 0, 1)
 
 [node name="Level5" type="Node2D" unique_id=1384450169]
 script = ExtResource("1_8rwkh")
@@ -293,54 +290,7 @@ offset_top = 424.0
 offset_right = 1435.0
 offset_bottom = 517.0
 
-[node name="NonDiageticUI" type="CanvasLayer" parent="." unique_id=1761488485]
-
-[node name="Control" type="Control" parent="NonDiageticUI" unique_id=416934755]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-mouse_filter = 2
-script = ExtResource("15_jei1r")
-
-[node name="WinText" type="Label" parent="NonDiageticUI/Control" unique_id=660866934]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -243.5
-offset_top = -53.0
-offset_right = 243.5
-offset_bottom = 53.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.95629674, 0.6172894, 0.22802043, 1)
-theme_override_font_sizes/font_size = 77
-text = "You escaped!"
-
-[node name="NextLevelButton" type="Button" parent="NonDiageticUI/Control" unique_id=2104027857]
-visible = false
-layout_mode = 0
-offset_left = 714.0
-offset_top = 925.0
-offset_right = 1201.0
-offset_bottom = 1036.0
-theme_override_font_sizes/font_size = 61
-text = "Next Room"
-
-[node name="LevelSwipe" type="Panel" parent="NonDiageticUI" unique_id=348206722]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0jtpg")
+[node name="NonDiageticUI" parent="." unique_id=1258627663 instance=ExtResource("23_c4hym")]
 
 [node name="Key" parent="." unique_id=255064478 instance=ExtResource("16_mtm34")]
 position = Vector2(-721, 206)
@@ -372,5 +322,3 @@ dialogueOrientation = 3
 [node name="Door" parent="." unique_id=125407365 node_paths=PackedStringArray("assigned_keys") instance=ExtResource("17_ev0e5")]
 position = Vector2(1079, -774)
 assigned_keys = [NodePath("../Key"), NodePath("../Key2")]
-
-[connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]

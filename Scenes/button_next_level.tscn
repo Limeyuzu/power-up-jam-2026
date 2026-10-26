@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dth3qva5gxrlc"]
+
+[ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="1_rujwt"]
+[ext_resource type="Texture2D" uid="uid://dbuo3q02y2jxj" path="res://sprites/ui-button.png" id="2_v4xbp"]
+[ext_resource type="Texture2D" uid="uid://vg5727fgv25r" path="res://sprites/ui-button-pressed.png" id="3_cnij8"]
+[ext_resource type="Texture2D" uid="uid://det3iuts5w3q7" path="res://sprites/ui-button-hover.png" id="4_gdlpf"]
+[ext_resource type="FontFile" uid="uid://d3uwru8imcjj1" path="res://fonts/DarumadropOne-Regular.ttf" id="5_7rqxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtpg"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="NonDiageticUI" type="CanvasLayer" unique_id=1258627663]
+
+[node name="Control" type="Control" parent="." unique_id=1167894033]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+script = ExtResource("1_rujwt")
+
+[node name="WinText" type="Label" parent="Control" unique_id=2091846493]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.5
+offset_top = -53.0
+offset_right = 243.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95629674, 0.6172894, 0.22802043, 1)
+theme_override_font_sizes/font_size = 77
+text = "You escaped!"
+
+[node name="NextLevelButton" type="TextureButton" parent="Control" unique_id=526588498]
+visible = false
+layout_mode = 0
+offset_left = 669.0
+offset_top = 607.0
+offset_right = 1090.0
+offset_bottom = 796.0
+texture_normal = ExtResource("2_v4xbp")
+texture_pressed = ExtResource("3_cnij8")
+texture_hover = ExtResource("4_gdlpf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/NextLevelButton" unique_id=997934514]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 420.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_7rqxo")
+theme_override_font_sizes/font_size = 100
+text = "Next"
+horizontal_alignment = 1
+
+[node name="LevelSwipe" type="Panel" parent="." unique_id=1785988351]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 33.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jtpg")
+
+[connection signal="pressed" from="Control/NextLevelButton" to="Control" method="_on_next_level_button_pressed"]
