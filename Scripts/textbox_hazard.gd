@@ -11,7 +11,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	var rect = panel.get_rect()
 	collisionShape.shape.set_size(Vector2(rect.size.x - 2 * margins, rect.size.y - 2 * margins))
-	collisionShape.set_position(Vector2(rect.size.x / 2, rect.size.y / 2))
+	collisionShape.set_position(Vector2(panel.position.x + rect.size.x / 2, panel.position.y + rect.size.y / 2))
 
 func _on_body_entered(_body: Node2D) -> void:
 	Signals.emit_signal("Player_Death")
