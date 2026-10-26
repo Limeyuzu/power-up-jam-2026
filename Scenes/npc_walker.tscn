@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bi0etb4g2lyfw"]
+
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="1_dr2la"]
+[ext_resource type="Texture2D" uid="uid://rolcbcqqolf" path="res://sprites/npc-kangaroo.png" id="2_ap0dp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a5ln"]
+size = Vector2(81, 127)
+
+[node name="NPC" type="AnimatableBody2D" unique_id=1610678597]
+script = ExtResource("1_dr2la")
+distance = Vector2(173.005, 2.105)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=166904075]
+scale = Vector2(0.26601672, 0.26601672)
+texture = ExtResource("2_ap0dp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1823788879]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_2a5ln")
