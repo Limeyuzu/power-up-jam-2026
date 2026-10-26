@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b86qgtavmx8un"]
 
-[ext_resource type="Script" uid="uid://bqmj2tx3c56am" path="res://Scripts/npc.gd" id="1_doyf7"]
+[ext_resource type="Script" uid="uid://djxqlxkrqq3l4" path="res://Scripts/npc.gd" id="1_doyf7"]
 [ext_resource type="Texture2D" uid="uid://boxsvl8te2e2y" path="res://sprites/Character Sprites/Old Man Dog.png" id="1_n684t"]
 [ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="2_tvwev"]
 
