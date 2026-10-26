@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bby01iko4lb4u"]
 
 [ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_iul47"]
+[ext_resource type="PackedScene" uid="uid://xafejb0ok7a8" path="res://Scenes/Level_5.tscn" id="2_iul47"]
 [ext_resource type="Texture2D" uid="uid://djck814hb158w" path="res://sprites/floor.jpg" id="2_jlilh"]
 [ext_resource type="Texture2D" uid="uid://dxdpwdmxneer8" path="res://sprites/wall.JPG" id="3_k40la"]
 [ext_resource type="Texture2D" uid="uid://b7wtwk78qh1dc" path="res://sprites/Environment Sprites/Stage.png" id="4_k40la"]
@@ -48,6 +49,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [node name="Level4" type="Node2D" unique_id=1384450169]
 script = ExtResource("1_iul47")
+target_level = ExtResource("2_iul47")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=1334116005]
 modulate = Color(0.99613255, 0.9133034, 0.73503715, 0.7019608)
