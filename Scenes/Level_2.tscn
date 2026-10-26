@@ -4,10 +4,6 @@
 [ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="3_diio2"]
 [ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="4_5ufib"]
 [ext_resource type="PackedScene" uid="uid://cx30hg3u3nvc3" path="res://Scenes/player.tscn" id="5_001cu"]
-[ext_resource type="Script" uid="uid://flra500ihbix" path="res://addons/yarn_spinner/dialogue_runner.gd" id="6_57dsp"]
-[ext_resource type="Resource" uid="uid://dup74utxyd06b" path="res://Project.yarnproject" id="7_tm7ih"]
-[ext_resource type="Script" uid="uid://cged8u182768u" path="res://addons/yarn_spinner/ui/line_presenter.gd" id="8_25io1"]
-[ext_resource type="Script" uid="uid://cogqy630mjgv7" path="res://addons/yarn_spinner/ui/options_presenter.gd" id="9_8gp1p"]
 [ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_yybfe"]
 [ext_resource type="PackedScene" uid="uid://cbh6wkodlsbwa" path="res://Scenes/key.tscn" id="12_v1bqs"]
 [ext_resource type="PackedScene" uid="uid://dsh8expeklfeo" path="res://Scenes/door.tscn" id="13_7qdet"]
@@ -82,28 +78,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 position = Vector2(235, 912)
 is_mouse_move = false
 
-[node name="YarnDialogueRunner" type="Node" parent="." unique_id=978152143 node_paths=PackedStringArray("presenters")]
-script = ExtResource("6_57dsp")
-yarn_project = ExtResource("7_tm7ih")
-start_node = "Godot"
-auto_start = true
-presenters = [NodePath("../YarnLinePresenter")]
-metadata/_custom_type_script = "uid://flra500ihbix"
-
-[node name="YarnLinePresenter" type="Node" parent="." unique_id=1763649733 node_paths=PackedStringArray("text_label")]
-script = ExtResource("8_25io1")
-text_label = NodePath("../RichTextLabel")
-metadata/_custom_type_script = "uid://cged8u182768u"
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1730256542]
 offset_left = 1111.0
 offset_top = 424.0
 offset_right = 1435.0
 offset_bottom = 517.0
-
-[node name="YarnOptionsPresenter" type="Node" parent="." unique_id=52563849]
-script = ExtResource("9_8gp1p")
-metadata/_custom_type_script = "uid://cogqy630mjgv7"
 
 [node name="NonDiageticUI" type="CanvasLayer" parent="." unique_id=1761488485]
 
@@ -172,7 +151,6 @@ shape = SubResource("RectangleShape2D_qnpof")
 modulate = Color(0.13682577, 0.13682574, 0.13682571, 1)
 position = Vector2(859.5, 41.499996)
 scale = Vector2(26.890627, 1.1571428)
-texture = ExtResource("11_5ufib")
 
 [node name="Wall3" type="StaticBody2D" parent="." unique_id=664652896]
 position = Vector2(-234, 534)
