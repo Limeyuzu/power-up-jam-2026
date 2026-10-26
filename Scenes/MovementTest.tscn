@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b7wcoxydusjsw" path="res://sprites/Environment Sprites/Posters/Anime Poster 4.png" id="10_b3thw"]
 [ext_resource type="PackedScene" uid="uid://dsigt28ms3vue" path="res://Scenes/table-long.tscn" id="10_irc8b"]
 [ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="11_qvwxf"]
-[ext_resource type="PackedScene" uid="uid://b86qgtavmx8un" path="res://Scenes/npcs/old_dog.tscn" id="14_gia7o"]
+[ext_resource type="PackedScene" uid="uid://b86qgtavmx8un" path="res://Scenes/npcs/dog.tscn" id="14_gia7o"]
 [ext_resource type="PackedScene" uid="uid://c2e6070cdp5be" path="res://Scenes/npcs/rabbit.tscn" id="14_hibly"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jtpg"]
@@ -212,7 +212,7 @@ offset_bottom = 517.0
 position = Vector2(1022, 127)
 dialogueOrientation = 1
 
-[node name="OldDog" parent="." unique_id=1535402762 instance=ExtResource("14_gia7o")]
+[node name="Dog" parent="." unique_id=1535402762 instance=ExtResource("14_gia7o")]
 position = Vector2(1009, 808)
 dialogueOrientation = 3
 
