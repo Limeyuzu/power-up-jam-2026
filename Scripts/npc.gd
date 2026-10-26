@@ -8,7 +8,7 @@ var seenPlayer = false
 func _ready() -> void:
 	dialogueBubble.setOrientation(dialogueOrientation)
 
-func onDetectedPlayer(body: Node2D) -> void:
+func onDetectedPlayer(_body: Node2D) -> void:
 	if not seenPlayer:
 		dialogueBubble.startDialogue()
 		seenPlayer = true

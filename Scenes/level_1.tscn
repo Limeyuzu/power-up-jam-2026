@@ -147,7 +147,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("6_irc8b")]
 position = Vector2(130, 535)
-collision_layer = 1
 is_mouse_move = false
 
 [node name="WinText" type="Label" parent="." unique_id=660866934]

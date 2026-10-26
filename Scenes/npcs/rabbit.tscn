@@ -18,7 +18,7 @@ texture = ExtResource("1_bfjmj")
 startNode = "Rabbit"
 
 [node name="DetectionRadius" type="Area2D" parent="." unique_id=888721954]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius" unique_id=452495579]
