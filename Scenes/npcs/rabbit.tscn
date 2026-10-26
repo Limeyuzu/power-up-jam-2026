@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2e6070cdp5be"]
 
 [ext_resource type="Texture2D" uid="uid://d008imiyrg77y" path="res://sprites/Character Sprites/Scared Bunny.png" id="1_bfjmj"]
-[ext_resource type="Script" uid="uid://bqmj2tx3c56am" path="res://Scripts/npc.gd" id="1_ia7lw"]
+[ext_resource type="Script" uid="uid://djxqlxkrqq3l4" path="res://Scripts/npc.gd" id="1_ia7lw"]
 [ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="2_ia7lw"]
 
 [node name="Rabbit" type="Node2D" unique_id=1535402762 node_paths=PackedStringArray("dialogueBubble")]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b13ntuyeacxx3"]
 
-[ext_resource type="Script" uid="uid://bqmj2tx3c56am" path="res://Scripts/npc.gd" id="1_3uyo1"]
+[ext_resource type="Script" uid="uid://djxqlxkrqq3l4" path="res://Scripts/npc.gd" id="1_3uyo1"]
 [ext_resource type="Texture2D" uid="uid://bedrnl1vgun57" path="res://sprites/Character Sprites/Buff Kangaroo.png" id="2_3uyo1"]
 [ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="3_fnipn"]
 
