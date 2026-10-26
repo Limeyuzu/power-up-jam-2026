@@ -13,4 +13,4 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_bfjmj")
 
 [node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("2_ia7lw")]
-startNode = "Top"
+startNode = "Rabbit"

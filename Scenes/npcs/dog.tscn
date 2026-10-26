@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://boxsvl8te2e2y" path="res://sprites/Character Sprites/Old Man Dog.png" id="1_n684t"]
 [ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="2_tvwev"]
 
-[node name="OldDog" type="Node2D" unique_id=1535402762 node_paths=PackedStringArray("dialogueBubble")]
+[node name="Dog" type="Node2D" unique_id=1535402762 node_paths=PackedStringArray("dialogueBubble")]
 script = ExtResource("1_doyf7")
 dialogueBubble = NodePath("DialogueBubble")
 
@@ -13,4 +13,4 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_n684t")
 
 [node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("2_tvwev")]
-startNode = "Bottom"
+startNode = "Dog"
