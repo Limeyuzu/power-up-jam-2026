@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c818bq4ccncyt"]
+
+[ext_resource type="Texture2D" uid="uid://bn7aifxvitfpv" path="res://sprites/Environment Sprites/Table Wide.png" id="1_coxhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ji530"]
+size = Vector2(658, 170)
+
+[node name="TableLong" type="Node2D" unique_id=1116605915]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1660155360]
+texture = ExtResource("1_coxhn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=836103139]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=748082444]
+position = Vector2(0, -94)
+shape = SubResource("RectangleShape2D_ji530")

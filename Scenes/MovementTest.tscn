@@ -7,8 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://djck814hb158w" path="res://sprites/floor.jpg" id="3_fsk2n"]
 [ext_resource type="Texture2D" uid="uid://dxdpwdmxneer8" path="res://sprites/wall.JPG" id="4_lj3dt"]
 [ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="5_2ts83"]
+[ext_resource type="PackedScene" uid="uid://c818bq4ccncyt" path="res://Scenes/table-wide.tscn" id="6_2ts83"]
 [ext_resource type="PackedScene" uid="uid://cx30hg3u3nvc3" path="res://Scenes/player.tscn" id="6_irc8b"]
+[ext_resource type="Texture2D" uid="uid://bvib53rw3xq78" path="res://sprites/Environment Sprites/Posters/Anime Poster 2.png" id="6_mjynw"]
+[ext_resource type="Texture2D" uid="uid://dx2df26xvxqvn" path="res://sprites/Environment Sprites/Posters/Anime Poster.png" id="8_mjynw"]
 [ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_0jtpg"]
+[ext_resource type="PackedScene" uid="uid://dsigt28ms3vue" path="res://Scenes/table-long.tscn" id="10_irc8b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jtpg"]
 texture = ExtResource("4_lj3dt")
@@ -40,7 +44,7 @@ script = ExtResource("1_lj3dt")
 target_level = ExtResource("2_irc8b")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=2116559172]
-modulate = Color(0.9385008, 0.948368, 0.8106334, 0.7019608)
+modulate = Color(0.99613255, 0.9133034, 0.73503715, 0.7019608)
 position = Vector2(953, 536)
 rotation = 1.5707964
 scale = Vector2(1.16, 1.0800012)
@@ -52,6 +56,26 @@ tile_map_data = PackedByteArray("AAADAEcAAAAAAAAAAAALAEcAAAAAAAAAAAD//xEAAAAAAAA
 tile_set = SubResource("TileSet_ji530")
 rendering_quadrant_size = 128
 physics_quadrant_size = 128
+
+[node name="TableLong" parent="." unique_id=72580967 instance=ExtResource("10_irc8b")]
+position = Vector2(1360, 620)
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TableLong" unique_id=1760907856]
+position = Vector2(-42.499996, -147.49998)
+rotation = -1.2130039
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_mjynw")
+
+[node name="TableWide" parent="." unique_id=1116605915 instance=ExtResource("6_2ts83")]
+position = Vector2(333, 391)
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="TableWide" unique_id=1197356769]
+position = Vector2(-64.99999, -107.49999)
+scale = Vector2(0.3, 0.3)
+skew = 0.3036873
+texture = ExtResource("8_mjynw")
 
 [node name="TopDialogueBubble" parent="." unique_id=742978764 instance=ExtResource("3_2ts83")]
 position = Vector2(1043, 11)
