@@ -8,6 +8,7 @@
 
 [node name="Rabbit" type="Node2D" unique_id=1535402762 node_paths=PackedStringArray("dialogueBubble")]
 script = ExtResource("1_ia7lw")
+startNode = "Rabbit"
 dialogueBubble = NodePath("DialogueBubble")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784926523]
@@ -15,7 +16,6 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_bfjmj")
 
 [node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("2_ia7lw")]
-startNode = "Rabbit"
 
 [node name="DetectionRadius" type="Area2D" parent="." unique_id=888721954]
 collision_layer = 0

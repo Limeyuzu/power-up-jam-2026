@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cmssfpa2clnvf"]
+
+[ext_resource type="AudioStream" uid="uid://of3q0gsjfwan" path="res://Sounds/level-music.mp3" id="1_d8lou"]
+[ext_resource type="Script" uid="uid://1djjdaamjdmy" path="res://Scripts/audio_manager.gd" id="1_tc383"]
+[ext_resource type="AudioStream" uid="uid://cj8qndlm6paf7" path="res://Sounds/Crowd.ogg" id="2_xwxa3"]
+[ext_resource type="AudioStream" uid="uid://dnb1we5lswtuk" path="res://Sounds/PowerUp2026 25Oct26PM very draft2.mp3" id="3_rn2tf"]
+
+[node name="Audio" type="Node2D" unique_id=1219461328]
+script = ExtResource("1_tc383")
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=1545401975]
+stream = ExtResource("1_d8lou")
+autoplay = true
+
+[node name="CreditsMusic" type="AudioStreamPlayer" parent="." unique_id=2052877448]
+stream = ExtResource("3_rn2tf")
+
+[node name="CrowdNoise" type="AudioStreamPlayer" parent="." unique_id=923136483]
+stream = ExtResource("2_xwxa3")
+autoplay = true

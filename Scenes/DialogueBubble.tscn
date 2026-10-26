@@ -18,13 +18,6 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwrjw"]
-content_margin_left = 80.0
-content_margin_top = 60.0
-content_margin_right = 0.0
-content_margin_bottom = 80.0
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
 [node name="DialogueBubble" type="Node2D" unique_id=742978764 node_paths=PackedStringArray("dialogueRunner", "bubbleTexture", "parentPanel")]
 script = ExtResource("1_cto1i")
 dialogueRunner = NodePath("TopPanel/YarnDialogueRunner")
@@ -34,7 +27,7 @@ parentPanel = NodePath("TopPanel")
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1992005786 node_paths=PackedStringArray("panel", "textLabel", "collisionShape") groups=["hurtbox"]]
 script = ExtResource("1_le7rw")
 panel = NodePath("../TopPanel")
-textLabel = NodePath("../TopPanel/PanelContainer/TopTextLabel")
+textLabel = NodePath("../TopPanel/MarginContainer/TopTextLabel")
 collisionShape = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=2092298908]
@@ -42,14 +35,15 @@ shape = SubResource("RectangleShape2D_cto1i")
 debug_color = Color(0.6767672, 0.42960477, 0.7029842, 0.41960785)
 
 [node name="TopPanel" type="PanelContainer" parent="." unique_id=1756780005]
+propagate_maximum_size = false
 clip_contents = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
 offset_top = -270.0
-offset_right = 661.0
-offset_bottom = -96.0
+offset_right = 170.0
+offset_bottom = -116.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_evltv")
 
@@ -62,14 +56,19 @@ patch_margin_top = 50
 patch_margin_right = 20
 patch_margin_bottom = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="TopPanel" unique_id=1811214263]
+[node name="MarginContainer" type="MarginContainer" parent="TopPanel" unique_id=191938742]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(500, -1)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jwrjw")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 60
 
-[node name="TopTextLabel" type="RichTextLabel" parent="TopPanel/PanelContainer" unique_id=157340846]
-custom_maximum_size = Vector2(500, 1000)
+[node name="TopTextLabel" type="RichTextLabel" parent="TopPanel/MarginContainer" unique_id=157340846]
 layout_mode = 2
 offset_transform_position = Vector2(20, 0)
+offset_transform_visual_only = false
 theme = ExtResource("2_cto1i")
 theme_override_font_sizes/normal_font_size = 28
 theme_override_font_sizes/bold_font_size = 32
@@ -77,10 +76,11 @@ theme_override_font_sizes/bold_italics_font_size = 32
 theme_override_font_sizes/italics_font_size = 32
 theme_override_font_sizes/mono_font_size = 32
 bbcode_enabled = true
-text = "placeholder text"
+text = "..."
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
+horizontal_alignment = 1
 
 [node name="YarnDialogueRunner" type="Node" parent="TopPanel" unique_id=111050668 node_paths=PackedStringArray("presenters")]
 script = ExtResource("3_3h1l8")
@@ -90,7 +90,7 @@ metadata/_custom_type_script = "uid://flra500ihbix"
 
 [node name="YarnLinePresenter" type="Node" parent="TopPanel" unique_id=215617081 node_paths=PackedStringArray("text_label")]
 script = ExtResource("5_pfy0a")
-text_label = NodePath("../PanelContainer/TopTextLabel")
+text_label = NodePath("../MarginContainer/TopTextLabel")
 click_anywhere_to_continue = false
 metadata/_custom_type_script = "uid://cged8u182768u"
 

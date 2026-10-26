@@ -15,10 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://b7wcoxydusjsw" path="res://sprites/Environment Sprites/Posters/Anime Poster 4.png" id="10_b3thw"]
 [ext_resource type="PackedScene" uid="uid://dsigt28ms3vue" path="res://Scenes/table-long.tscn" id="10_irc8b"]
 [ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="11_qvwxf"]
+[ext_resource type="PackedScene" uid="uid://dsh8expeklfeo" path="res://Scenes/door.tscn" id="13_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://b86qgtavmx8un" path="res://Scenes/npcs/dog.tscn" id="14_gia7o"]
 [ext_resource type="PackedScene" uid="uid://c2e6070cdp5be" path="res://Scenes/npcs/rabbit.tscn" id="14_hibly"]
-[ext_resource type="AudioStream" uid="uid://of3q0gsjfwan" path="res://Sounds/level-music.mp3" id="18_qvwxf"]
-[ext_resource type="AudioStream" uid="uid://cj8qndlm6paf7" path="res://Sounds/Crowd.ogg" id="19_wqw3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3thw"]
 texture = ExtResource("4_lj3dt")
@@ -104,7 +103,7 @@ rotation = -0.19896753
 texture = ExtResource("11_qvwxf")
 
 [node name="Exit" type="Area2D" parent="." unique_id=65981014]
-position = Vector2(1849, 307)
+position = Vector2(2274, 509)
 script = ExtResource("2_crf2g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1599469015]
@@ -130,6 +129,10 @@ text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Door" parent="Exit" unique_id=125407365 node_paths=PackedStringArray("assigned_keys") instance=ExtResource("13_6ssoq")]
+position = Vector2(-459, -172)
+assigned_keys = []
+
 [node name="Spawn" type="Area2D" parent="." unique_id=178399655]
 position = Vector2(102, 521)
 script = ExtResource("5_2ts83")
@@ -147,6 +150,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("6_irc8b")]
 position = Vector2(130, 535)
+collision_mask = 3
 is_mouse_move = false
 
 [node name="WinText" type="Label" parent="." unique_id=660866934]
@@ -213,18 +217,12 @@ offset_bottom = 517.0
 [node name="Rabbit" parent="." unique_id=1854306438 instance=ExtResource("14_hibly")]
 position = Vector2(1022, 127)
 dialogueOrientation = 1
+startNode = "Rabbit_long"
 
 [node name="Dog" parent="." unique_id=1535402762 instance=ExtResource("14_gia7o")]
 position = Vector2(1009, 808)
 dialogueOrientation = 3
-
-[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=1311409010]
-stream = ExtResource("18_qvwxf")
-autoplay = true
-
-[node name="CrowdNoise" type="AudioStreamPlayer" parent="." unique_id=2139441595]
-stream = ExtResource("19_wqw3y")
-autoplay = true
+startNode = "Default"
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]
