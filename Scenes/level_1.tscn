@@ -50,7 +50,7 @@ script = ExtResource("1_lj3dt")
 target_level = ExtResource("2_irc8b")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=2116559172]
-modulate = Color(0.99613255, 0.9133034, 0.73503715, 0.7019608)
+modulate = Color(0.8352941, 0.53333336, 0.87058824, 0.7019608)
 position = Vector2(953, 536)
 rotation = 1.5707964
 scale = Vector2(1.16, 1.0800012)
@@ -147,6 +147,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("6_irc8b")]
 position = Vector2(130, 535)
+collision_layer = 1
 is_mouse_move = false
 
 [node name="WinText" type="Label" parent="." unique_id=660866934]
