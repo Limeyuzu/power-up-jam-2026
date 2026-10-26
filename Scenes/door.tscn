@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://dsh8expeklfeo"]
 
 [ext_resource type="Script" uid="uid://bw2djmeu1po1m" path="res://Scripts/door.gd" id="1_p0e35"]
-[ext_resource type="Texture2D" uid="uid://idu5mnn4h57v" path="res://sprites/DoorSprite2.png" id="2_fahql"]
+[ext_resource type="Texture2D" uid="uid://cle4le6ftf387" path="res://sprites/Environment Sprites/Doors/door open.png" id="2_p0e35"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuyls"]
 size = Vector2(197, 200)
 
 [node name="Door" type="StaticBody2D" unique_id=125407365 node_paths=PackedStringArray("assigned_keys")]
 script = ExtResource("1_p0e35")
-assigned_keys = [NodePath(""), NodePath("")]
+assigned_keys = [null, null]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=376775167]
 modulate = Color(0.4504755, 0.8054581, 0.99910337, 1)
 scale = Vector2(1.2870967, 0.5773639)
-texture = ExtResource("2_fahql")
+texture = ExtResource("2_p0e35")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=804282171]
 position = Vector2(-2.5, -1)
