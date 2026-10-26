@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dhoru27so2d6l"]
 
-[ext_resource type="Script" uid="uid://bqmj2tx3c56am" path="res://Scripts/npc.gd" id="1_6krcw"]
-[ext_resource type="Texture2D" uid="uid://boxsvl8te2e2y" path="res://sprites/Character Sprites/Old Man Dog.png" id="2_bykyf"]
+[ext_resource type="Script" uid="uid://cnaf3kvik6ils" path="res://Scripts/npc.gd" id="1_6krcw"]
+[ext_resource type="Texture2D" uid="uid://bs66lhrf5wlax" path="res://sprites/Character Sprites/Mean Elephant.png" id="2_6krcw"]
 [ext_resource type="PackedScene" uid="uid://ddjqn2nauxekv" path="res://Scenes/DialogueBubble.tscn" id="3_w001s"]
 
-[node name="Dog" type="Node2D" unique_id=1535402762 node_paths=PackedStringArray("dialogueBubble")]
+[node name="Elephant" type="Node2D" unique_id=1535402762 node_paths=PackedStringArray("dialogueBubble")]
 script = ExtResource("1_6krcw")
 dialogueBubble = NodePath("DialogueBubble")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784926523]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_bykyf")
+texture = ExtResource("2_6krcw")
 
 [node name="DialogueBubble" parent="." unique_id=742978764 instance=ExtResource("3_w001s")]
-startNode = "Dog"
+startNode = "Elephant"
