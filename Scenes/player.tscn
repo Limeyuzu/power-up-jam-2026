@@ -30,6 +30,7 @@ offset_bottom = 44.0
 flat = true
 
 [node name="HintLabel" type="Label" parent="." unique_id=676835355]
+visible = false
 offset_left = -51.0
 offset_top = -72.0
 offset_right = 51.0
