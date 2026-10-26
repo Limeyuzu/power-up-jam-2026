@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://kgixkhyr4e25"]
 
 [ext_resource type="Script" uid="uid://c1ohfnyvknl7u" path="res://Scripts/GameManager.gd" id="1_001cu"]
-[ext_resource type="Script" uid="uid://cwuy1odofr5kx" path="res://Scripts/textbox_hazard.gd" id="2_5ufib"]
 [ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="3_diio2"]
 [ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="4_5ufib"]
 [ext_resource type="PackedScene" uid="uid://cx30hg3u3nvc3" path="res://Scenes/player.tscn" id="5_001cu"]
@@ -12,28 +11,9 @@
 [ext_resource type="Script" uid="uid://dgxe860c5lnua" path="res://Scripts/UI_manager.gd" id="10_yybfe"]
 [ext_resource type="PackedScene" uid="uid://cbh6wkodlsbwa" path="res://Scenes/key.tscn" id="12_v1bqs"]
 [ext_resource type="PackedScene" uid="uid://dsh8expeklfeo" path="res://Scenes/door.tscn" id="13_7qdet"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crf2g"]
-bg_color = Color(0.9098039, 0.40784314, 0.5568628, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_001cu"]
-resource_local_to_scene = true
-size = Vector2(140, 123.5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evltv"]
-bg_color = Color(0.9098039, 0.40784314, 0.5568628, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crf2g"]
-resource_local_to_scene = true
-size = Vector2(140, 123.5)
+[ext_resource type="Script" uid="uid://drm8iyka18tt4" path="res://Scripts/RailWalker.gd" id="14_25io1"]
+[ext_resource type="PackedScene" uid="uid://c2e6070cdp5be" path="res://Scenes/npcs/rabbit.tscn" id="15_57dsp"]
+[ext_resource type="Script" uid="uid://du2ek0ts5cx87" path="res://Scripts/bubble_thrower.gd" id="16_tm7ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evltv"]
 size = Vector2(197, 81)
@@ -45,73 +25,19 @@ bg_color = Color(0.14041275, 0.6911776, 0.61381274, 1)
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
-size = Vector2(1717, 85)
+size = Vector2(1911, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tu2c"]
+size = Vector2(78, 1251)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuyls"]
+size = Vector2(94, 127)
 
 [node name="Level2" type="Node2D" unique_id=1384450169]
 script = ExtResource("1_001cu")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=1862267599 node_paths=PackedStringArray("panel", "textLabel", "collisionShape") groups=["hurtbox"]]
-position = Vector2(187, 151)
-script = ExtResource("2_5ufib")
-panel = NodePath("Panel")
-textLabel = NodePath("Panel/Label")
-collisionShape = NodePath("CollisionShape2D")
-
-[node name="Panel" type="PanelContainer" parent="Hurtbox" unique_id=1990585820]
-clip_contents = true
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 165.0
-offset_bottom = 162.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_crf2g")
-
-[node name="Label" type="RichTextLabel" parent="Hurtbox/Panel" unique_id=1870675742]
-layout_mode = 2
-text = "See? it's a differnent
- level because the 
-text is different
-f
-f
-ff
-f"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1510199292]
-shape = SubResource("RectangleShape2D_001cu")
-debug_color = Color(0.78837734, 0.3481881, 0.6569848, 0.41960785)
-
-[node name="Hurtbox2" type="Area2D" parent="." unique_id=1123306631 node_paths=PackedStringArray("panel", "textLabel", "collisionShape") groups=["hurtbox"]]
-position = Vector2(555, 594)
-script = ExtResource("2_5ufib")
-panel = NodePath("Panel")
-textLabel = NodePath("Panel/Label")
-collisionShape = NodePath("CollisionShape2D")
-
-[node name="Panel" type="PanelContainer" parent="Hurtbox2" unique_id=292050422]
-clip_contents = true
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 461.0
-offset_bottom = 127.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_evltv")
-
-[node name="Label" type="RichTextLabel" parent="Hurtbox2/Panel" unique_id=1505411942]
-layout_mode = 2
-text = "baking bread making bread stacking bands
-money rising like yeast 
-haiku dot file extention"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox2" unique_id=362570535]
-position = Vector2(69, 64.25)
-shape = SubResource("RectangleShape2D_crf2g")
-debug_color = Color(0.78837734, 0.3481881, 0.6569848, 0.41960785)
-
 [node name="Exit" type="Area2D" parent="." unique_id=65981014]
-position = Vector2(1804, 11)
+position = Vector2(1804, 12)
 script = ExtResource("3_diio2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1599469015]
@@ -154,6 +80,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
 
 [node name="Player" parent="." unique_id=188212945 instance=ExtResource("5_001cu")]
 position = Vector2(235, 912)
+is_mouse_move = false
 
 [node name="YarnDialogueRunner" type="Node" parent="." unique_id=978152143 node_paths=PackedStringArray("presenters")]
 script = ExtResource("6_57dsp")
@@ -228,29 +155,77 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0jtpg")
 
 [node name="Wall" type="StaticBody2D" parent="." unique_id=1290000039]
+position = Vector2(94, -81)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=286356054]
 position = Vector2(858.5, 39.5)
 shape = SubResource("RectangleShape2D_qnpof")
 
 [node name="Wall2" type="StaticBody2D" parent="." unique_id=2064159483]
-position = Vector2(0, 996)
+position = Vector2(110, 1085)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=729567127]
-position = Vector2(858.5, 39.5)
+position = Vector2(846.5, 39.5)
 shape = SubResource("RectangleShape2D_qnpof")
 
+[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=1942616244]
+modulate = Color(0.13682577, 0.13682574, 0.13682571, 1)
+position = Vector2(859.5, 41.499996)
+scale = Vector2(26.890627, 1.1571428)
+texture = ExtResource("11_5ufib")
+
+[node name="Wall3" type="StaticBody2D" parent="." unique_id=664652896]
+position = Vector2(-234, 534)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=522666393]
+position = Vector2(194, 8.5)
+shape = SubResource("RectangleShape2D_2tu2c")
+
+[node name="Wall4" type="StaticBody2D" parent="." unique_id=948043526]
+position = Vector2(1768, 534)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4" unique_id=1796811143]
+position = Vector2(194, 8.5)
+shape = SubResource("RectangleShape2D_2tu2c")
+
 [node name="Key" parent="." unique_id=255064478 instance=ExtResource("12_v1bqs")]
-position = Vector2(1105, 398)
+position = Vector2(1845, 721)
 
 [node name="Key2" parent="." unique_id=1034164627 instance=ExtResource("12_v1bqs")]
-position = Vector2(1477, 705)
+position = Vector2(946, 59)
 
 [node name="Door" parent="." unique_id=125407365 node_paths=PackedStringArray("assigned_keys") instance=ExtResource("13_7qdet")]
-position = Vector2(1819, 184)
+position = Vector2(1819, 185)
 assigned_keys = [NodePath("../Key"), NodePath("../Key2")]
 
-[connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
-[connection signal="body_entered" from="Hurtbox2" to="Hurtbox2" method="_on_body_entered"]
+[node name="BubbleThrower" type="Node2D" parent="." unique_id=419882138]
+position = Vector2(167, 679)
+script = ExtResource("16_tm7ih")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1673670192]
+position = Vector2(917, 782)
+script = ExtResource("14_25io1")
+distance = Vector2(400, 0)
+phase_offset = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=520800686]
+position = Vector2(37, 53.5)
+shape = SubResource("RectangleShape2D_yuyls")
+
+[node name="Rabbit" parent="AnimatableBody2D" unique_id=1535402762 instance=ExtResource("15_57dsp")]
+position = Vector2(39, 52)
+
+[node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=454311985]
+position = Vector2(917, 237)
+script = ExtResource("14_25io1")
+distance = Vector2(400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2" unique_id=1080581097]
+position = Vector2(37, 53.5)
+shape = SubResource("RectangleShape2D_yuyls")
+
+[node name="Rabbit" parent="AnimatableBody2D2" unique_id=1649787881 instance=ExtResource("15_57dsp")]
+position = Vector2(39, 52)
+
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="pressed" from="NonDiageticUI/Control/NextLevelButton" to="NonDiageticUI/Control" method="_on_next_level_button_pressed"]

@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 
-[node name="Player" type="CharacterBody2D" unique_id=188212945]
+[node name="Player" type="CharacterBody2D" unique_id=188212945 groups=["player"]]
 collision_mask = 3
 input_pickable = true
 script = ExtResource("1_cvnsp")
@@ -34,8 +34,7 @@ offset_right = 51.0
 offset_bottom = -49.0
 text = "click to move"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1511520347]
-position_smoothing_enabled = true
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1726051357]
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

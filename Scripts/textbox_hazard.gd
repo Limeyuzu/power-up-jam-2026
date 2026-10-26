@@ -13,5 +13,6 @@ func _ready() -> void:
 	collisionShape.shape.set_size(Vector2(rect.size.x - 2 * margins, rect.size.y - 2 * margins))
 	collisionShape.set_position(Vector2(panel.position.x + rect.size.x / 2, panel.position.y + rect.size.y / 2))
 
-func _on_body_entered(_body: Node2D) -> void:
-	Signals.emit_signal("Player_Death")
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		Signals.emit_signal("Player_Death")

@@ -41,6 +41,10 @@ project/assembly_name="Convo dodger"
 
 enabled=PackedStringArray("res://addons/yarn_spinner/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [input]
 
 ui_left={

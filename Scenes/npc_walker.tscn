@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bi0etb4g2lyfw"]
 
-[ext_resource type="Script" path="res://Scripts/npc.gd" id="1_dr2la"]
+[ext_resource type="Script" uid="uid://cnaf3kvik6ils" path="res://Scripts/npc.gd" id="1_dr2la"]
 [ext_resource type="Texture2D" uid="uid://rolcbcqqolf" path="res://sprites/npc-kangaroo.png" id="2_ap0dp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a5ln"]
@@ -8,7 +8,10 @@ size = Vector2(81, 127)
 
 [node name="NPC" type="AnimatableBody2D" unique_id=1610678597]
 script = ExtResource("1_dr2la")
-distance = Vector2(173.005, 2.105)
+dialogueOrientation = null
+distance = null
+phase_time = null
+phase_offset = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=166904075]
 scale = Vector2(0.26601672, 0.26601672)
