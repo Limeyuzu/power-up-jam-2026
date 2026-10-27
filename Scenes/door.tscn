@@ -17,7 +17,7 @@ assigned_keys = [null, null]
 [node name="DoorOpen_Sprite" type="Sprite2D" parent="." unique_id=376775167]
 visible = false
 modulate = Color(0.4504755, 0.8054581, 0.99910337, 1)
-scale = Vector2(1.2870967, 0.5773639)
+scale = Vector2(1.287, 0.577)
 texture = ExtResource("2_p0e35")
 
 [node name="DoorClosed_Spite" type="Sprite2D" parent="." unique_id=1786426118]

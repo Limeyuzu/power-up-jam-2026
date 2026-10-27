@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbh6wkodlsbwa"]
 
 [ext_resource type="Script" uid="uid://cwdtlq2o52ell" path="res://Scripts/key.gd" id="1_udxw8"]
-[ext_resource type="Texture2D" uid="uid://bcmgl3s55e513" path="res://sprites/KeysBlueRed.png" id="2_brn0f"]
+[ext_resource type="Texture2D" uid="uid://c6lq1goag7lpm" path="res://sprites/Environment Sprites/Geralt Plushie.png" id="2_udxw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tu2c"]
 size = Vector2(103, 91)
@@ -15,10 +15,9 @@ shape = SubResource("RectangleShape2D_2tu2c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1116303427]
 position = Vector2(0.99998856, 0.99998665)
-rotation = -1.5662135
+rotation = -0.0060038567
 scale = Vector2(0.32235485, 0.2930353)
-texture = ExtResource("2_brn0f")
-region_enabled = true
+texture = ExtResource("2_udxw8")
 region_rect = Rect2(48, 42.5, 125, 269)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

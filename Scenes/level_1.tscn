@@ -6,13 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://djck814hb158w" path="res://sprites/floor.jpg" id="3_fsk2n"]
 [ext_resource type="Texture2D" uid="uid://dxdpwdmxneer8" path="res://sprites/wall.JPG" id="4_lj3dt"]
 [ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="5_2ts83"]
-[ext_resource type="Texture2D" uid="uid://ckqf5f6rae5ni" path="res://sprites/Character Sprites/Random NPC.png" id="5_hibly"]
+[ext_resource type="Texture2D" uid="uid://bosn8hmwc5nkc" path="res://sprites/Character Sprites/NPC and Wigs/Random NPC.png" id="5_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://c818bq4ccncyt" path="res://Scenes/table-wide.tscn" id="6_2ts83"]
+[ext_resource type="Texture2D" uid="uid://ccoumwxwoi33f" path="res://sprites/Character Sprites/NPC and Wigs/Wigs/naruto.png" id="6_imks0"]
 [ext_resource type="PackedScene" uid="uid://cx30hg3u3nvc3" path="res://Scenes/player.tscn" id="6_irc8b"]
 [ext_resource type="Texture2D" uid="uid://bvib53rw3xq78" path="res://sprites/Environment Sprites/Posters/Anime Poster 2.png" id="6_mjynw"]
 [ext_resource type="Texture2D" uid="uid://dx2df26xvxqvn" path="res://sprites/Environment Sprites/Posters/Anime Poster.png" id="8_mjynw"]
 [ext_resource type="Texture2D" uid="uid://b7wcoxydusjsw" path="res://sprites/Environment Sprites/Posters/Anime Poster 4.png" id="10_b3thw"]
 [ext_resource type="PackedScene" uid="uid://dsigt28ms3vue" path="res://Scenes/table-long.tscn" id="10_irc8b"]
+[ext_resource type="Texture2D" uid="uid://diwbw3ty7kp45" path="res://sprites/Environment Sprites/trash and decorations/frieren goodie bags.png" id="11_dlmop"]
 [ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="11_qvwxf"]
 [ext_resource type="PackedScene" uid="uid://dsh8expeklfeo" path="res://Scenes/door.tscn" id="13_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://b86qgtavmx8un" path="res://Scenes/npcs/dog.tscn" id="14_gia7o"]
@@ -62,12 +64,16 @@ physics_quadrant_size = 128
 [node name="RandomNpc" type="Sprite2D" parent="." unique_id=1080069575]
 position = Vector2(361, 258)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_hibly")
+texture = ExtResource("5_6ssoq")
 
-[node name="RandomNpc2" type="Sprite2D" parent="." unique_id=693968719]
-position = Vector2(1490, 663)
+[node name="Sprite2D" type="Sprite2D" parent="RandomNpc" unique_id=1005507319]
+position = Vector2(0, -250)
+texture = ExtResource("6_imks0")
+
+[node name="RandomNpc3" type="Sprite2D" parent="." unique_id=925724865]
+position = Vector2(1489, 664)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_hibly")
+texture = ExtResource("5_6ssoq")
 
 [node name="TableLong" parent="." unique_id=72580967 instance=ExtResource("10_irc8b")]
 position = Vector2(1383, 692)
@@ -88,6 +94,11 @@ position = Vector2(-64.99999, -107.49999)
 scale = Vector2(0.3, 0.3)
 skew = 0.3036873
 texture = ExtResource("8_mjynw")
+
+[node name="TablePoster2" type="Sprite2D" parent="TableWide" unique_id=894531463]
+position = Vector2(-247.50005, -160.00003)
+scale = Vector2(0.7679777, 0.7679777)
+texture = ExtResource("11_dlmop")
 
 [node name="WallPoster" type="Sprite2D" parent="TableWide" unique_id=851796644]
 position = Vector2(197.49998, -607.5)
@@ -168,11 +179,11 @@ offset_bottom = 517.0
 [node name="Rabbit" parent="." unique_id=1854306438 instance=ExtResource("14_hibly")]
 position = Vector2(1022, 127)
 dialogueOrientation = 1
-startNode = "Rabbit_long"
+startNode = "Top"
 
 [node name="Dog" parent="." unique_id=1535402762 instance=ExtResource("14_gia7o")]
 position = Vector2(1016, 815)
 dialogueOrientation = 3
-startNode = "Default"
+startNode = "Bottom"
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
