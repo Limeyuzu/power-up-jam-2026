@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/leavemealone.ogg-d3ac9f8672ec4a7d54a90113a61e
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
