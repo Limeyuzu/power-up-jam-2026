@@ -1,6 +1,7 @@
 extends Area2D
 
 var original_position: Vector2 = Vector2(0,0)
+@onready var geralt_ping: AudioStreamPlayer = $GeraltPing
 
 func _ready() -> void:
 	Signals.Player_Death.connect(_reset_self)
@@ -16,6 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 		Signals.emit_signal("Key_Aquired", self)
 		position = Vector2(0,3000)
 		$Sprite2D.visible = false
+		$GeraltPing.play()
 
 func _reset_self():
 	position = original_position

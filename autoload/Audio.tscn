@@ -12,6 +12,7 @@ script = ExtResource("1_tc383")
 stream = ExtResource("2_tc383")
 volume_db = -10.0
 autoplay = true
+parameters/looping = true
 
 [node name="CreditsMusic" type="AudioStreamPlayer" parent="." unique_id=2052877448]
 stream = ExtResource("3_rn2tf")
