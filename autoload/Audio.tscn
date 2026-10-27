@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://1djjdaamjdmy" path="res://Scripts/audio_manager.gd" id="1_tc383"]
 [ext_resource type="AudioStream" uid="uid://bvd50d43lq36n" path="res://Sounds/leavemealone.ogg" id="2_tc383"]
 [ext_resource type="AudioStream" uid="uid://cj8qndlm6paf7" path="res://Sounds/Crowd.ogg" id="2_xwxa3"]
-[ext_resource type="AudioStream" uid="uid://bi0jbk2v51f6c" path="res://Sounds/lmacredits.ogg" id="3_rn2tf"]
+[ext_resource type="AudioStream" uid="uid://bckw5wrymw74p" path="res://Sounds/credits.mp3" id="3_tc383"]
 
 [node name="Audio" type="Node2D" unique_id=1219461328]
 script = ExtResource("1_tc383")
@@ -15,7 +15,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="CreditsMusic" type="AudioStreamPlayer" parent="." unique_id=2052877448]
-stream = ExtResource("3_rn2tf")
+stream = ExtResource("3_tc383")
 volume_db = -10.0
 
 [node name="CrowdNoise" type="AudioStreamPlayer" parent="." unique_id=923136483]

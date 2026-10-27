@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcocw8i500o1y" path="res://sprites/Start Screen Sprites/Background Gradient.png" id="1_7emq5"]
 [ext_resource type="FontFile" uid="uid://d3uwru8imcjj1" path="res://fonts/DarumadropOne-Regular.ttf" id="1_ccovl"]
+[ext_resource type="Script" uid="uid://uhl6qymp62aw" path="res://Scripts/credits.gd" id="1_uah1q"]
 [ext_resource type="FontFile" uid="uid://cstr8mp1pm1bs" path="res://fonts/Barriecito-Regular.ttf" id="2_1bamb"]
 [ext_resource type="Texture2D" uid="uid://bvib53rw3xq78" path="res://sprites/Environment Sprites/Posters/Anime Poster 2.png" id="3_xelri"]
 [ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="4_xelri"]
@@ -81,6 +82,7 @@ _data = {
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Node2D" unique_id=1227462849]
+script = ExtResource("1_uah1q")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=911108455]
 anchors_preset = 15
