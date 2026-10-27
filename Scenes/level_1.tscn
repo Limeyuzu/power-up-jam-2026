@@ -111,7 +111,7 @@ rotation = -0.19896753
 texture = ExtResource("11_qvwxf")
 
 [node name="Exit" type="Area2D" parent="." unique_id=65981014]
-position = Vector2(2274, 509)
+position = Vector2(4914, 509)
 script = ExtResource("2_crf2g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1599469015]
@@ -138,7 +138,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Door" parent="Exit" unique_id=125407365 node_paths=PackedStringArray("assigned_keys") instance=ExtResource("13_6ssoq")]
-position = Vector2(-459, -172)
+position = Vector2(-3095, -172)
 assigned_keys = []
 
 [node name="Spawn" type="Area2D" parent="." unique_id=178399655]

@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://djck814hb158w" path="res://sprites/floor.jpg" id="2_7qdet"]
 [ext_resource type="PackedScene" uid="uid://b2w7sxp3jkx82" path="res://Scenes/Level_3.tscn" id="2_57dsp"]
 [ext_resource type="Texture2D" uid="uid://dxdpwdmxneer8" path="res://sprites/wall.JPG" id="3_57dsp"]
-[ext_resource type="Script" uid="uid://dqdaedfn3481e" path="res://Scripts/exit.gd" id="3_diio2"]
 [ext_resource type="Script" uid="uid://d0yr8wuvr5tdp" path="res://Scripts/spawn.gd" id="4_5ufib"]
 [ext_resource type="PackedScene" uid="uid://cx30hg3u3nvc3" path="res://Scenes/player.tscn" id="5_001cu"]
 [ext_resource type="Texture2D" uid="uid://b7wcoxydusjsw" path="res://sprites/Environment Sprites/Posters/Anime Poster 4.png" id="5_vq2h6"]
@@ -187,33 +186,6 @@ rotation = -0.024116717
 scale = Vector2(0.7907286, 0.79072845)
 texture = ExtResource("15_8mcgu")
 
-[node name="Exit" type="Area2D" parent="." unique_id=65981014]
-position = Vector2(3637, -99)
-script = ExtResource("3_diio2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1599469015]
-position = Vector2(14.5, 30.5)
-shape = SubResource("RectangleShape2D_evltv")
-
-[node name="Panel" type="Panel" parent="Exit" unique_id=85118077]
-offset_left = -84.0
-offset_top = -11.0
-offset_right = 113.0
-offset_bottom = 71.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_vtgv7")
-
-[node name="Label" type="Label" parent="Exit/Panel" unique_id=1253635743]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 46
-text = "Exit"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Spawn" type="Area2D" parent="." unique_id=178399655]
 position = Vector2(224, 892)
 script = ExtResource("4_5ufib")
@@ -298,5 +270,3 @@ startNode = "Kangaroo_short"
 [node name="Elephant" parent="." unique_id=264917514 instance=ExtResource("20_q8wyw")]
 position = Vector2(23, 262)
 startNode = "Elephant_long"
-
-[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]

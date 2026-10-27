@@ -28,9 +28,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		Signals.emit_signal("Level_Complete")
 		
 func _player_death():
-	door_health = assigned_keys.size()
-	$KeysRemainingLabel.text = str(door_health)
-	_change_door_state(false)
+	if assigned_keys.size() <= 0:
+		_change_door_state(true)
+	else:
+		door_health = assigned_keys.size()
+		$KeysRemainingLabel.text = str(door_health)
+		_change_door_state(false)
 	
 		
 func _change_door_state(open : bool):
