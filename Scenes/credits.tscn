@@ -6,9 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bvib53rw3xq78" path="res://sprites/Environment Sprites/Posters/Anime Poster 2.png" id="3_xelri"]
 [ext_resource type="Texture2D" uid="uid://d0ilbd1j8wd2v" path="res://sprites/Environment Sprites/Posters/Anime Poster 3.png" id="4_xelri"]
 [ext_resource type="Texture2D" uid="uid://dk0j0tsbrw4fe" path="res://sprites/Environment Sprites/Posters/poster-alien.png" id="5_803yc"]
+[ext_resource type="Texture2D" uid="uid://cma2vbftsa1a4" path="res://sprites/Environment Sprites/Posters/Jutsu_kaisen.png" id="6_ae0tj"]
 [ext_resource type="Texture2D" uid="uid://cb173m8y1w5xu" path="res://sprites/ui-bubble.png" id="7_j6nef"]
+[ext_resource type="Texture2D" uid="uid://coteieu12s8s1" path="res://sprites/Environment Sprites/Posters/Astro Boy Poster.png" id="7_rlyo5"]
 [ext_resource type="Theme" uid="uid://tw7yenv8p7nj" path="res://theme.tres" id="8_fdv4u"]
 [ext_resource type="Texture2D" uid="uid://b8dprs2wmdu68" path="res://sprites/Character Sprites/mrKangaroo.png" id="9_ae0tj"]
+[ext_resource type="Texture2D" uid="uid://dnjk3vjscj0w1" path="res://sprites/Environment Sprites/ciri plushie.png" id="12_0oi4c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwrjw"]
 bg_color = Color(0, 0, 0, 1)
@@ -108,9 +111,8 @@ grow_vertical = 2
 [node name="CreditsHeader" type="RichTextLabel" parent="Control" unique_id=291581350]
 layout_mode = 0
 offset_left = 128.0
-offset_top = 64.0
 offset_right = 1289.0
-offset_bottom = 293.0
+offset_bottom = 229.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_ccovl")
 theme_override_font_sizes/normal_font_size = 150
@@ -119,70 +121,70 @@ text = "CREDITS"
 [node name="ProjectRole-5" type="RichTextLabel" parent="Control" unique_id=886274305]
 layout_mode = 0
 offset_left = 128.0
-offset_top = 1552.0
-offset_right = 607.0
-offset_bottom = 1623.0
+offset_top = 1576.0
+offset_right = 816.0
+offset_bottom = 1647.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_ccovl")
 theme_override_font_sizes/normal_font_size = 48
-text = "PROJECT ROLE"
+text = "DESIGNER, PROGRAMMER"
 
 [node name="PersonName-5" type="RichTextLabel" parent="Control" unique_id=739110487]
 layout_mode = 0
 offset_left = 128.0
-offset_top = 1619.0
+offset_top = 1643.0
 offset_right = 1207.0
-offset_bottom = 1711.0
+offset_bottom = 1735.0
 theme_override_colors/default_color = Color(0.99215686, 0.9764706, 0.3372549, 1)
 theme_override_fonts/normal_font = ExtResource("2_1bamb")
 theme_override_font_sizes/normal_font_size = 80
-text = "Firstname Lastname"
+text = "Leslie Llama"
 scroll_active = false
 
 [node name="ProjectRole-4" type="RichTextLabel" parent="Control" unique_id=1326773665]
 layout_mode = 0
 offset_left = 448.0
-offset_top = 1144.0
+offset_top = 1224.0
 offset_right = 927.0
-offset_bottom = 1215.0
+offset_bottom = 1295.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_ccovl")
 theme_override_font_sizes/normal_font_size = 48
-text = "PROJECT ROLE"
+text = "PROGRAMMER"
 
 [node name="PersonName-4" type="RichTextLabel" parent="Control" unique_id=1663065896]
 layout_mode = 0
 offset_left = 448.0
-offset_top = 1211.0
+offset_top = 1291.0
 offset_right = 1527.0
-offset_bottom = 1303.0
+offset_bottom = 1383.0
 theme_override_colors/default_color = Color(0.99215686, 0.9764706, 0.3372549, 1)
 theme_override_fonts/normal_font = ExtResource("2_1bamb")
 theme_override_font_sizes/normal_font_size = 80
-text = "Firstname Lastname"
+text = "Sylvie (Sylky) Li"
 scroll_active = false
 
 [node name="ProjectRole-3" type="RichTextLabel" parent="Control" unique_id=1002730145]
 layout_mode = 0
 offset_left = 128.0
-offset_top = 896.0
+offset_top = 928.0
 offset_right = 607.0
-offset_bottom = 967.0
+offset_bottom = 999.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_ccovl")
 theme_override_font_sizes/normal_font_size = 48
-text = "PROJECT ROLE"
+text = "COMPOSER"
 
 [node name="PersonName-3" type="RichTextLabel" parent="Control" unique_id=1512803345]
 layout_mode = 0
 offset_left = 128.0
-offset_top = 963.0
+offset_top = 995.0
 offset_right = 1207.0
-offset_bottom = 1055.0
+offset_bottom = 1087.0
 theme_override_colors/default_color = Color(0.99215686, 0.9764706, 0.3372549, 1)
 theme_override_fonts/normal_font = ExtResource("2_1bamb")
 theme_override_font_sizes/normal_font_size = 80
-text = "Firstname Lastname"
+text = "Suzie White, Composer"
 scroll_active = false
 
 [node name="ProjectRole-2" type="RichTextLabel" parent="Control" unique_id=943734078]
@@ -194,7 +196,7 @@ offset_bottom = 695.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_ccovl")
 theme_override_font_sizes/normal_font_size = 48
-text = "PROJECT ROLE"
+text = "2D ARTIST"
 
 [node name="PersonName-2" type="RichTextLabel" parent="Control" unique_id=237000662]
 layout_mode = 0
@@ -205,7 +207,7 @@ offset_bottom = 783.0
 theme_override_colors/default_color = Color(0.99215686, 0.9764706, 0.3372549, 1)
 theme_override_fonts/normal_font = ExtResource("2_1bamb")
 theme_override_font_sizes/normal_font_size = 80
-text = "Firstname Lastname"
+text = "Michaela (Modd) Dodd"
 scroll_active = false
 
 [node name="ProjectRole-1" type="RichTextLabel" parent="Control" unique_id=1574201939]
@@ -217,7 +219,7 @@ offset_bottom = 388.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_ccovl")
 theme_override_font_sizes/normal_font_size = 48
-text = "PROJECT ROLE"
+text = "PRODUCER, UI DESIGN"
 
 [node name="PersonName-1" type="RichTextLabel" parent="Control" unique_id=841039649]
 layout_mode = 0
@@ -228,14 +230,14 @@ offset_bottom = 476.0
 theme_override_colors/default_color = Color(0.99215686, 0.9764706, 0.3372549, 1)
 theme_override_fonts/normal_font = ExtResource("2_1bamb")
 theme_override_font_sizes/normal_font_size = 80
-text = "Firstname Lastname"
+text = "Amila Nuhodzic"
 scroll_active = false
 
 [node name="Poster2" type="Sprite2D" parent="Control" unique_id=1770039123]
-position = Vector2(247.99994, 696)
+position = Vector2(264, 696)
 rotation = -0.15707964
 scale = Vector2(0.79696155, 0.7969615)
-texture = ExtResource("4_xelri")
+texture = ExtResource("3_xelri")
 
 [node name="Poster4" type="Sprite2D" parent="Control" unique_id=2035867619]
 position = Vector2(272, 1336)
@@ -244,22 +246,22 @@ scale = Vector2(0.79696155, 0.7969615)
 texture = ExtResource("4_xelri")
 
 [node name="Poster5" type="Sprite2D" parent="Control" unique_id=34213203]
-position = Vector2(1048, 1647.9999)
+position = Vector2(921.76764, 1670.3936)
 rotation = 0.15707964
-scale = Vector2(0.667979, 0.667979)
-texture = ExtResource("5_803yc")
+scale = Vector2(0.14757715, 0.14757715)
+texture = ExtResource("6_ae0tj")
 
 [node name="Poster3" type="Sprite2D" parent="Control" unique_id=2017222759]
-position = Vector2(1056.0001, 1008)
+position = Vector2(1152.0001, 1031.9999)
 rotation = 0.23561946
 scale = Vector2(0.65796274, 0.6579627)
-texture = ExtResource("5_803yc")
+texture = ExtResource("7_rlyo5")
 
 [node name="Poster" type="Sprite2D" parent="Control" unique_id=1703117087]
-position = Vector2(1112, 448.00003)
+position = Vector2(1000.00006, 424)
 rotation = 0.23561946
-scale = Vector2(0.79696155, 0.7969615)
-texture = ExtResource("3_xelri")
+scale = Vector2(0.617007, 0.61700696)
+texture = ExtResource("5_803yc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=36952793]
 libraries/ = SubResource("AnimationLibrary_7emq5")
@@ -304,3 +306,7 @@ autowrap_mode = 2
 position = Vector2(1195.5, 2432)
 scale = Vector2(0.7442748, 0.7442748)
 texture = ExtResource("9_ae0tj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/kangaroo" unique_id=1000165594]
+position = Vector2(264.0154, 107.48718)
+texture = ExtResource("12_0oi4c")
