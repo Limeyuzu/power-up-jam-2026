@@ -254,7 +254,7 @@ scale = Vector2(0.14757715, 0.14757715)
 texture = ExtResource("6_ae0tj")
 
 [node name="Poster3" type="Sprite2D" parent="Control" unique_id=2017222759]
-position = Vector2(1152.0001, 1031.9999)
+position = Vector2(815.9999, 1023.9999)
 rotation = 0.23561946
 scale = Vector2(0.65796274, 0.6579627)
 texture = ExtResource("7_rlyo5")
@@ -270,6 +270,7 @@ libraries/ = SubResource("AnimationLibrary_7emq5")
 autoplay = &"credit_scroll"
 
 [node name="fadeBlack" type="PanelContainer" parent="Control" unique_id=1938853086]
+visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
